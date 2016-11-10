@@ -1,0 +1,15 @@
+<div class="container">
+  {{#bs-form class='login-form' action='login'}}
+    <h3 class="login-form-heading"><img src="assets/logo.svg"></h3>
+    <hr class="colorgraph"><br>
+
+    {{bs-input type='text' value=email placeholder=(t 'login.email')}}
+    {{bs-input type='password' value=password placeholder=(t 'login.password')}}
+
+    {{bs-button defaultText=(t 'login.login') block=true size='lg' type='primary' buttonType='submit'}}
+
+    {{#bs-alert type='danger' visible=errorVisible}}
+      <strong>{{fa-icon 'exclamation-triangle'}}</strong> {{t (concat 'login.errors.' error)}}
+    {{/bs-alert}}
+  {{/bs-form}}
+</div>

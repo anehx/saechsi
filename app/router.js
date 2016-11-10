@@ -1,12 +1,20 @@
-import Ember from 'ember';
-import config from './config/environment';
+import Router from 'ember-router'
+import config from './config/environment'
 
-const Router = Ember.Router.extend({
+const AppRouter = Router.extend({
   location: config.locationType,
-  rootURL: config.rootURL
-});
+  rootURL:  config.rootURL
+})
 
-Router.map(function() {
-});
+const resetNamespace = true
 
-export default Router;
+AppRouter.map(function() {
+  this.route('login')
+
+  this.route('protected', { path: '/' }, function() {
+    this.route('index', { path: '/', resetNamespace })
+    this.route('grades', { resetNamespace })
+  })
+})
+
+export default AppRouter

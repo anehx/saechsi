@@ -1,0 +1,74 @@
+@import 'ember-bootstrap/bootstrap';
+@import 'login';
+
+html {
+  height: 100vh;
+}
+
+body.ember-application {
+  min-height: 100%;
+  display: flex;
+}
+
+body.ember-application > .ember-view {
+  flex-grow: 1;
+}
+
+// .initializing::before,
+// .initializing::after {
+//   content: '';
+//   position: fixed;
+//   left: 0;
+//   right: 0;
+//   top: 0;
+//   bottom: 0;
+//   z-index: 1000;
+//   background-repeat: no-repeat;
+// }
+//
+// .initializing::after {
+//   background-image: url(/assets/dots.svg);
+//   background-position: center 80%;
+//   background-size: 20%;
+// }
+//
+// .initializing::before {
+//   content: '';
+//   background-image: url(/assets/logo-white.svg);
+//   background-position: center 20%;
+//   background-size: 90%;
+//   background-color:  #DD2C00;
+// }
+//
+// @media (min-width: $layout-breakpoint-xs) {
+//   .initializing::after {
+//     background-position: center 90%;
+//   }
+// }
+//
+// @media (min-width: $layout-breakpoint-sm) {
+//   .initializing::before {
+//     background-size: 50%;
+//   }
+//
+//   .initializing::after {
+//     background-size: 10%;
+//   }
+// }
+//
+// @media (min-width: $layout-breakpoint-md) {
+//   .initializing::before {
+//     background-size: 40%;
+//   }
+// }
+//
+// @media (min-width: $layout-breakpoint-sm) {
+//   .initializing::before {
+//     background-size: 25%;
+//   }
+//
+//   .initializing::after {
+//     background-size: 5%;
+//     background-position: center 65%;
+//   }
+// }

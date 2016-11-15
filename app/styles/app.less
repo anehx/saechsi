@@ -1,5 +1,7 @@
-@import 'ember-bootstrap/bootstrap';
+@import 'bootstrap';
+@import 'flat-ui';
 @import 'login';
+@import 'pod-styles';
 
 html {
   height: 100vh;
@@ -12,6 +14,19 @@ body.ember-application {
 
 body.ember-application > .ember-view {
   flex-grow: 1;
+}
+
+main.container {
+  padding-top: 50px;
+}
+
+.loading-slider {
+  z-index: 1031;
+
+}
+.loading-slider > span {
+  background-color: rgb(72,201,176);
+  box-shadow: 0 0 2px 1px rgba(72,201,176,0.75);
 }
 
 // .initializing::before,

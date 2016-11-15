@@ -14,6 +14,12 @@ AppRouter.map(function() {
   this.route('protected', { path: '/' }, function() {
     this.route('index', { path: '/', resetNamespace })
     this.route('grades', { resetNamespace })
+
+    this.route('lectures', { resetNamespace }, function() {
+      this.route('new')
+      this.route('edit', { path: '/edit/:id' })
+      this.route('delete', { path: '/delete/:id' })
+    })
   })
 })
 

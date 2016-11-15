@@ -16,13 +16,6 @@ export default Route.extend({
     $('body').removeClass('login')
   },
 
-  setupController(controller) {
-    this._super(...arguments)
-
-    controller.set('error', '')
-    controller.set('errorVisible', false)
-  },
-
   actions: {
     login() {
       let provider = 'password'
@@ -36,7 +29,6 @@ export default Route.extend({
         })
         .catch(error => {
           this.set('controller.error', error.message)
-          this.set('controller.errorVisible', true)
         })
     }
   }

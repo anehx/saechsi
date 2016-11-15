@@ -1,0 +1,19 @@
+<h1 class="title">
+  {{t 'lectures.title'}}
+  <small>{{t 'lectures.new'}}</small>
+</h1>
+
+<form {{action 'save' on='submit'}}>
+  <div class="form-group">
+    <label>{{t 'lectures.name'}}</label>
+    {{input class='form-control' type='text' value=model.name}}
+  </div>
+
+  <div class="form-group">
+    <label>{{t 'lectures.color'}}</label>
+    {{input class='form-control' type='text' value=model.color}}
+  </div>
+
+  <button type="primary" class="btn btn-primary">{{t 'save'}}</button>
+  {{#link-to 'lectures.index' tagName='button' class='btn btn-default'}}{{t 'back'}}{{/link-to}}
+</form>

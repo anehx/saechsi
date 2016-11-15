@@ -1,0 +1,9 @@
+<h1 class="title">
+  {{t 'lectures.title'}}
+  <small>{{t 'lectures.delete'}}</small>
+</h1>
+
+<p>{{t 'lectures.deleteDialog' name=model.name}}</p>
+
+<button class="btn btn-primary" {{action 'delete'}}>{{t 'yes'}}</button>
+{{#link-to 'lectures.index' tagName='button' class='btn btn-default'}}{{t 'no'}}{{/link-to}}

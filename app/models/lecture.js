@@ -7,8 +7,10 @@ import {
 } from 'ember-data/relationships'
 
 export default Model.extend({
-  name:     attr('string'),
-  color:    attr('string'),
-  // semester: belongsTo('semester'),
-  // grades:   hasMany('grade')
+  name:      attr('string'),
+  color:     attr('string'),
+  weighting: attr('number'),
+  semester:  belongsTo('semester'),
+  grades:    hasMany('grade'),
+  goal:      hasMany('goal')
 })

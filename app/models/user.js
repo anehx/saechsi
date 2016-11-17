@@ -1,5 +1,11 @@
-import DS from 'ember-data';
+import Model       from 'ember-data/model'
+import attr        from 'ember-data/attr'
+import { hasMany } from 'ember-data/relationships'
 
-export default DS.Model.extend({
-
-});
+export default Model.extend({
+  email:     attr('string'),
+  password:  attr('string'),
+  firstName: attr('string'),
+  lastName:  attr('string'),
+  schools:   hasMany('school')
+})

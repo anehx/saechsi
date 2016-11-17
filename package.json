@@ -42,6 +42,7 @@
     "ember-component-css": "0.2.2",
     "ember-composable-helpers": "1.1.2",
     "ember-computed-decorators": "0.2.2",
+    "ember-cordova": "0.3.9",
     "ember-data": "^2.10.0-beta.2",
     "ember-export-application-global": "^1.0.5",
     "ember-font-awesome": "2.2.0",

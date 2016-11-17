@@ -5,7 +5,7 @@ module.exports = function(environment) {
     modulePrefix: 'saechsi',
     environment: environment,
     rootURL: '/',
-    locationType: 'auto',
+    locationType: 'hash',
 
     firebase: {
       apiKey: "AIzaSyBxEwOoyG40YQu6G9-OsEZOmG-gvBeaKlM",

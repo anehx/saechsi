@@ -4,13 +4,14 @@ export default {
   delete: 'Löschä',
   yes: 'Ja',
   no: 'Nei',
+  logout: 'Usloggä',
 
   dashboard: {
     title: 'Dashboard'
   },
 
   login: {
-    login:    'Ilogge',
+    login:    'Iloggä',
     password: 'Passwort',
     email:    'Email',
     errors: {
@@ -25,11 +26,15 @@ export default {
     title: 'Lektionä',
     list: 'Aui Lektionä',
     new: 'Nöii Lektion ersteuue',
-    edit: 'Lektion bearbeitä',
-    delete: 'Lektion löschä',
+    edit: 'Lektion "{{name}}" bearbeitä',
+    delete: 'Lektion "{{name}}" löschä',
     deleteDialog: 'Wosch d Lektion "{{name}}" würk löschä?',
     name: 'Name',
     color: 'Farb',
     empty: 'Keni Lektionä ihtreit...'
+  },
+
+  grades: {
+    title: 'Notä'
   }
 }

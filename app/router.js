@@ -8,8 +8,10 @@ const AppRouter = Router.extend({
 
 const resetNamespace = true
 
+/* eslint-disable max-nested-callbacks */
 AppRouter.map(function() {
   this.route('login')
+  this.route('logout')
 
   this.route('protected', { path: '/' }, function() {
     this.route('index', { path: '/', resetNamespace })

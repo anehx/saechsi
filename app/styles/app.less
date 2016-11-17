@@ -17,10 +17,12 @@ body.ember-application {
 
 body.ember-application > .ember-view {
   flex-grow: 1;
+  display: flex;
 }
 
-main.container {
-  padding-top: 50px;
+main {
+  flex-grow: 1;
+  min-width: 320px;
 }
 
 .loading-slider {
@@ -33,4 +35,14 @@ main.container {
 
 .pointer {
   cursor: pointer;
+}
+
+.navbar-brand {
+  display: flex;
+  align-items: center;
+}
+
+.navbar-brand > img {
+  height: 30px;
+  margin-right: 10px;
 }

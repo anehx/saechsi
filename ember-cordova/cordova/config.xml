@@ -36,6 +36,12 @@
     <icon src="res/icon/android/xhdpi.png" density="xhdpi"/>
     <icon src="res/icon/android/xxhdpi.png" density="xxhdpi"/>
     <icon src="res/icon/android/xxxhdpi.png" density="xxxhdpi"/>
+    <icon src="res/icon/android/ldpi.png" density="ldpi"/>
+    <icon src="res/icon/android/mdpi.png" density="mdpi"/>
+    <icon src="res/icon/android/hdpi.png" density="hdpi"/>
+    <icon src="res/icon/android/xhdpi.png" density="xhdpi"/>
+    <icon src="res/icon/android/xxhdpi.png" density="xxhdpi"/>
+    <icon src="res/icon/android/xxxhdpi.png" density="xxxhdpi"/>
   </platform>
   <engine name="android" spec="~6.0.0"/>
 </widget>

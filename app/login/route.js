@@ -17,19 +17,25 @@ export default Route.extend({
   },
 
   actions: {
-    signIn() {
+    async signIn() {
       let provider = 'password'
       let email    = this.get('controller.email')
       let password = this.get('controller.password')
 
-      this.get('session').open('firebase', { provider, email, password })
-        .then(data => {
-          this.set('session.user', data.currentUser)
-          this.transitionTo('index')
-        })
-        .catch(error => {
-          this.set('controller.error', error.message)
-        })
+      try {
+        this.send('loading')
+
+        let data = await this.get('session').open('firebase', { provider, email, password })
+
+        this.set('session.user', data.currentUser)
+        this.transitionTo('index')
+      }
+      catch (e) {
+        this.set('controller.error', e.message)
+      }
+      finally {
+        this.send('finished')
+      }
     }
   }
 })

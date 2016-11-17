@@ -1,5 +1,16 @@
-{{header-top}}
+{{#nav-side visible=visible}}
+  {{nav-side-item icon='dashboard' link='index'          label=(t 'dashboard.title')}}
+  {{nav-side-item icon='table'     link='lectures.index' label=(t 'lectures.title')}}
+  {{nav-side-item icon='check'     link='grades'         label=(t 'grades.title')}}
+  {{nav-side-item icon='power-off' link='logout'         label=(t 'logout')}}
+{{/nav-side}}
 
-<main class="container">
-  {{outlet}}
+<main>
+  {{#header-top}}
+    {{nav-side-toggle on-click=(toggle 'visible' this)}}
+  {{/header-top}}
+
+  <section class="container">
+    {{outlet}}
+  </section>
 </main>

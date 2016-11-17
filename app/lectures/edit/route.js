@@ -5,6 +5,10 @@ export default Route.extend({
     return this.store.findRecord('lecture', id)
   },
 
+  deactivate() {
+    this.get('currentModel').rollbackAttributes()
+  },
+
   actions: {
     async save() {
       try {

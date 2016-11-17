@@ -5,7 +5,7 @@
   {{nav-side-item icon='power-off' link='logout'         label=(t 'logout')}}
 {{/nav-side}}
 
-<main>
+<main class="{{if visible 'nav-visible'}}">
   {{#header-top}}
     {{nav-side-toggle on-click=(toggle 'visible' this)}}
   {{/header-top}}

@@ -13,16 +13,24 @@ html {
 body.ember-application {
   min-height: 100%;
   display: flex;
+  overflow-x: hidden;
 }
 
 body.ember-application > .ember-view {
   flex-grow: 1;
   display: flex;
+  overflow-x: hidden;
 }
 
 main {
   flex-grow: 1;
   min-width: 320px;
+  overflow-x: hidden;
+  transition: margin-left 300ms ease;
+}
+
+main.nav-visible {
+  margin-left: @width;
 }
 
 .loading-slider {
@@ -45,4 +53,10 @@ main {
 .navbar-brand > img {
   height: 30px;
   margin-right: 10px;
+}
+
+@media (min-width: @screen-md-min) {
+  main {
+    margin-left: 0 !important;
+  }
 }

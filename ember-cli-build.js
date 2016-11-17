@@ -19,6 +19,8 @@ module.exports = function(defaults) {
     }
   })
 
+  app.import('vendor/reset.css')
+
   let fonts = funnel('bower_components/flat-ui/fonts', { destDir: '/fonts' })
 
   return app.toTree([ fonts ])

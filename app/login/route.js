@@ -9,15 +9,15 @@ export default Route.extend({
   },
 
   activate() {
-    $('body').addClass('login')
+    $('body').addClass('sign-in')
   },
 
   deactivate() {
-    $('body').removeClass('login')
+    $('body').removeClass('sign-in')
   },
 
   actions: {
-    login() {
+    signIn() {
       let provider = 'password'
       let email    = this.get('controller.email')
       let password = this.get('controller.password')

@@ -1,0 +1,75 @@
+body.ember-application.sign-in {
+  background: linear-gradient(to bottom, rgb(200, 200, 200), rgb(240, 240, 240));
+}
+
+body.ember-application.sign-in > .ember-view {
+  display: flex;
+  flex-grow: 1;
+  justify-content: center;
+  align-items: center;
+}
+
+.login-form {
+  width: 100%;
+  height: 100%;
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  padding-bottom: 25%;
+}
+
+@media (min-width: @screen-sm-min) {
+  .login-form {
+    max-width: 420px;
+    border: 1px solid rgba(0,0,0,0.1);
+    height: auto;
+    padding-bottom: 20px;
+    margin-top: -20%;
+  }
+}
+
+.login-form .alert {
+  margin: 20px 0 0;
+}
+
+.login-form-heading {
+  text-align: center;
+  margin: 0 0 30px;
+}
+
+.login-form-heading > img {
+  height: 100px;
+}
+
+.login-form .form-control {
+  position: relative;
+  font-size: 16px;
+  height: auto;
+  padding: 10px;
+}
+
+.login-form input[type=email],
+.login-form input[type=password] {
+  transition: none;
+}
+
+.login-form input[type=email] {
+  border-bottom-width: 0;
+  margin-bottom: 0px;
+  border-bottom-left-radius: 0;
+  border-bottom-right-radius: 0;
+}
+
+.login-form input[type=email]:focus {
+  border-bottom-width: 2px;
+}
+
+.login-form input[type=email]:focus + input[type=password] {
+  border-top-width: 0;
+}
+
+.login-form input[type=password] {
+  margin-bottom: 20px;
+  border-top-left-radius: 0;
+  border-top-right-radius: 0;
+}

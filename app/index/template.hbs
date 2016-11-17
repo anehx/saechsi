@@ -1,5 +1,7 @@
 <h1 class="title">{{t 'dashboard.title'}}</h1>
 
+{{#link-to 'lectures.index'}}Lektione{{/link-to}}
+
 <div class="row">
   <div class="col-md-6">
     {{ember-chart type='line' data=model width=200 height=200}}

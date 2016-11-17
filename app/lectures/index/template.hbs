@@ -17,11 +17,13 @@
   </thead>
   <tbody>
     {{#each model as |lecture|}}
-      {{#link-to 'lectures.edit' lecture.id tagName='tr' class='pointer'}}
-        <td>{{lecture.name}}</td>
-        <td>{{lecture.color}}</td>
-        <td></td>
-      {{/link-to}}
+      {{#unless model.isDeleted}}
+        {{#link-to 'lectures.edit' lecture.id tagName='tr' class='pointer'}}
+          <td>{{lecture.name}}</td>
+          <td>{{lecture.color}}</td>
+          <td></td>
+        {{/link-to}}
+      {{/unless}}
     {{^}}
       <tr>
         <td class="text-center" colspan="3">{{t 'lectures.empty'}}</td>

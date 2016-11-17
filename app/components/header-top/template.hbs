@@ -1,4 +1,13 @@
 <div class="container">
-  {{nav-side-toggle}}
-  <img src="/assets/logo-white.svg" class="navbar-logo">
+  <div class="navbar-header">
+    <button type="button" class="navbar-toggle" data-toggle="collapse" data-target="#navbar-collapse-01">
+      <span class="sr-only">Toggle navigation</span>
+    </button>
+    {{#link-to 'index' class='navbar-brand'}}sächsi{{/link-to}}
+  </div>
+  <div class="collapse navbar-collapse" id="navbar-collapse-01">
+    <ul class="nav navbar-nav">
+      {{#active-link}}{{#link-to 'lectures.index'}}{{t 'lectures.title'}}{{/link-to}}{{/active-link}}
+    </ul>
+  </div>
 </div>

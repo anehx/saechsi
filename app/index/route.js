@@ -19,7 +19,7 @@ export default Route.extend({
           label: 'Deutsch',
           fill: false,
           data: [ 3, 4, 4.5, 5, 4.5, 5 ]
-        },
+        }
       ]
     }
   }

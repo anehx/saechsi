@@ -15,7 +15,9 @@ AppRouter.map(function() {
 
   this.route('protected', { path: '/' }, function() {
     this.route('index', { path: '/', resetNamespace })
-    this.route('grades', { resetNamespace })
+    this.route('grades', { resetNamespace }, function() {
+      this.route('new');
+    })
 
     this.route('lectures', { resetNamespace }, function() {
       this.route('new')
@@ -23,6 +25,19 @@ AppRouter.map(function() {
       this.route('delete', { path: '/delete/:id' })
     })
   })
+  this.route('schools', function() {
+    this.route('edit');
+    this.route('new');
+  });
+  this.route('semesters', function() {
+    this.route('new');
+    this.route('edit');
+  });
+  this.route('goals', function() {
+    this.route('edit');
+    this.route('new');
+  });
+  this.route('register');
 })
 
 export default AppRouter

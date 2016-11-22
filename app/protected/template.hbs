@@ -1,16 +1,44 @@
-{{#nav-side visible=visible}}
-  {{nav-side-item icon='dashboard' link='index'          label=(t 'dashboard.title')}}
-  {{nav-side-item icon='table'     link='lectures.index' label=(t 'lectures.title')}}
-  {{nav-side-item icon='check'     link='grades'         label=(t 'grades.title')}}
-  {{nav-side-item icon='power-off' link='logout'         label=(t 'logout')}}
-{{/nav-side}}
+{{#burger-menu animation='reveal' itemAnimation='stack' as |burger|}}
+  {{#burger.menu itemTagName='li' as |menu|}}
+    <div class="bm-menu-header">
+      <img src="assets/logo-white.svg">
+      <span>sächsi</span>
+    </div>
+    <ul>
+      {{#menu.item}}
+        {{#link-to 'index'}}{{fa-icon 'dashboard' fixedWidth=true}} {{t 'dashboard.title'}}{{/link-to}}
+      {{/menu.item}}
 
-<main class="{{if visible 'nav-visible'}}">
-  {{#header-top}}
-    {{nav-side-toggle on-click=(toggle 'visible' this)}}
-  {{/header-top}}
+      {{#menu.item}}
+        {{#link-to 'schools.index'}}{{fa-icon 'home' fixedWidth=true}} {{t 'schools.title'}}{{/link-to}}
+      {{/menu.item}}
 
-  <section class="container">
-    {{outlet}}
-  </section>
-</main>
+      {{#menu.item}}
+        {{#link-to 'semesters.index'}}{{fa-icon 'graduation-cap' fixedWidth=true}} {{t 'semesters.title'}}{{/link-to}}
+      {{/menu.item}}
+
+      {{#menu.item}}
+        {{#link-to 'lectures.index'}}{{fa-icon 'table' fixedWidth=true}} {{t 'lectures.title'}}{{/link-to}}
+      {{/menu.item}}
+
+      {{#menu.item}}
+        {{#link-to 'grades.index'}}{{fa-icon 'check' fixedWidth=true}} {{t 'grades.title'}}{{/link-to}}
+      {{/menu.item}}
+
+      {{#menu.item}}
+        {{#link-to 'logout'}}{{fa-icon 'power-off' fixedWidth=true}} {{t 'logout'}}{{/link-to}}
+      {{/menu.item}}
+    </ul>
+  {{/burger.menu}}
+
+  {{#burger.outlet}}
+    <header class="bm-header">
+      <button class="bm-header-toggle" {{action burger.state.actions.toggle}}>
+        {{fa-icon 'bars'}}
+      </button>
+    </header>
+    <section class="container main">
+      {{liquid-outlet}}
+    </section>
+  {{/burger.outlet}}
+{{/burger-menu}}

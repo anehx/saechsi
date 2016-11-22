@@ -22,15 +22,8 @@ body.ember-application > .ember-view {
   overflow-x: hidden;
 }
 
-main {
+.ember-burger-menu {
   flex-grow: 1;
-  min-width: 320px;
-  overflow-x: hidden;
-  transition: margin-left 300ms ease;
-}
-
-main.nav-visible {
-  margin-left: @width;
 }
 
 .loading-slider {
@@ -45,18 +38,15 @@ main.nav-visible {
   cursor: pointer;
 }
 
-.navbar-brand {
+body.ember-application > .ember-view > .liquid-container {
+  flex-grow: 1;
   display: flex;
-  align-items: center;
 }
 
-.navbar-brand > img {
-  height: 30px;
-  margin-right: 10px;
+body.ember-application > .ember-view > .liquid-container > .liquid-child {
+  flex-grow: 1;
 }
 
-@media (min-width: @screen-md-min) {
-  main {
-    margin-left: 0 !important;
-  }
+.main {
+  padding-top: 50px;
 }

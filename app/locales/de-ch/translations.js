@@ -10,8 +10,17 @@ export default {
     title: 'Dashboard'
   },
 
+  register: {
+    register: 'Registrierä',
+    login: 'Zrugg zum Login',
+    password: 'Passwort',
+    passwordRepeat: 'Passwort widerholä',
+    email:    'Email'
+  },
+
   login: {
     login:    'Iloggä',
+    register: 'No ke Account? Iz registrierä!',
     password: 'Passwort',
     email:    'Email',
     errors: {
@@ -32,6 +41,14 @@ export default {
     name: 'Name',
     color: 'Farb',
     empty: 'Keni Lektionä ihtreit...'
+  },
+
+  semesters: {
+    title: 'Semeschter'
+  },
+
+  schools: {
+    title: 'Schuäu'
   },
 
   grades: {

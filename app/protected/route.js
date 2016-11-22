@@ -1,4 +1,5 @@
-import Route from 'ember-route'
+import Route      from 'ember-route'
+import burgerMenu from 'ember-burger-menu'
 
 export default Route.extend({
   beforeModel() {
@@ -12,6 +13,10 @@ export default Route.extend({
       this.get('session').close()
 
       this.transitionTo('login')
+    },
+
+    didTransition() {
+      burgerMenu.set('open', false)
     }
   }
 })

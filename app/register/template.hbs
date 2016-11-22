@@ -1,0 +1,20 @@
+<form class="login-form" {{action 'signUp' on='submit'}}>
+  <h3 class="login-form-heading">
+    <img src="assets/logo.svg">
+    sächsi
+  </h3>
+
+  {{input class='form-control' type='email' value=email placeholder=(t 'register.email') autofocus=true}}
+  {{input class='form-control' type='password' value=password placeholder=(t 'register.password')}}
+  {{input class='form-control' type='password' value=password placeholder=(t 'register.passwordRepeat')}}
+
+  {{#link-to 'login'}}{{t 'register.login'}}{{/link-to}}
+
+  <button type="submit" class="btn btn-lg btn-block btn-primary">{{t 'register.register'}}</button>
+
+  {{#if error}}
+    <div class="alert alert-danger">
+      <strong>{{fa-icon 'exclamation-triangle'}}</strong> {{t (concat 'register.errors.' error)}}
+    </div>
+  {{/if}}
+</form>

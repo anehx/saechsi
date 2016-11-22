@@ -7,6 +7,8 @@
   {{input class='form-control' type='email' value=email placeholder=(t 'login.email') autofocus=true}}
   {{input class='form-control' type='password' value=password placeholder=(t 'login.password')}}
 
+  {{#link-to 'register'}}{{t 'login.register'}}{{/link-to}}
+
   <button type="submit" class="btn btn-lg btn-block btn-primary">{{t 'login.login'}}</button>
 
   {{#if error}}

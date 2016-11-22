@@ -12,11 +12,15 @@ const resetNamespace = true
 AppRouter.map(function() {
   this.route('login')
   this.route('logout')
+  this.route('register')
 
   this.route('protected', { path: '/' }, function() {
     this.route('index', { path: '/', resetNamespace })
+
     this.route('grades', { resetNamespace }, function() {
-      this.route('new');
+      this.route('new')
+      this.route('edit', { path: '/edit/:id' })
+      this.route('delete', { path: '/delete/:id' })
     })
 
     this.route('lectures', { resetNamespace }, function() {
@@ -24,20 +28,25 @@ AppRouter.map(function() {
       this.route('edit', { path: '/edit/:id' })
       this.route('delete', { path: '/delete/:id' })
     })
+
+    this.route('schools', { resetNamespace }, function() {
+      this.route('new')
+      this.route('edit', { path: '/edit/:id' })
+      this.route('delete', { path: '/delete/:id' })
+    })
+
+    this.route('semesters', { resetNamespace }, function() {
+      this.route('new')
+      this.route('edit', { path: '/edit/:id' })
+      this.route('delete', { path: '/delete/:id' })
+    })
+
+    this.route('goals', { resetNamespace }, function() {
+      this.route('new')
+      this.route('edit', { path: '/edit/:id' })
+      this.route('delete', { path: '/delete/:id' })
+    })
   })
-  this.route('schools', function() {
-    this.route('edit');
-    this.route('new');
-  });
-  this.route('semesters', function() {
-    this.route('new');
-    this.route('edit');
-  });
-  this.route('goals', function() {
-    this.route('edit');
-    this.route('new');
-  });
-  this.route('register');
 })
 
 export default AppRouter

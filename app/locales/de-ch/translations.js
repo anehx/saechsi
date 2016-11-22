@@ -48,7 +48,7 @@ export default {
   },
 
   schools: {
-    title: 'Schuäu'
+    title: 'Schuälä'
   },
 
   grades: {

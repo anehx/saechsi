@@ -1,1 +1,32 @@
-{{outlet}}
+<h3>{{t 'semesters.list'}}</h3>
+
+{{#data-table as |t|}}
+  {{#t.head}}
+    <th>{{t 'semesters.name'}}</th>
+    <th>{{t 'semesters.school'}}</th>
+    <th>{{t 'semesters.from'}}</th>
+    <th>{{t 'semesters.to'}}</th>
+    <th class="text-right">
+      {{#link-to 'semesters.new' tagName='button' class='btn btn-primary btn-sm'}}
+        {{fa-icon 'plus'}}
+      {{/link-to}}
+    </th>
+  {{/t.head}}
+  {{#t.body}}
+    {{#each model as |semester|}}
+      {{#unless semester.isDeleted}}
+        {{#link-to 'semesters.edit' semester tagName='tr' class='pointer'}}
+          <td>{{semester.name}}</td>
+          <td>{{semester.school.name}}</td>
+          <td>{{semester.from}}</td>
+          <td>{{semester.to}}</td>
+          <td></td>
+        {{/link-to}}
+      {{/unless}}
+    {{^}}
+      <tr>
+        <td class="text-center" colspan="5">{{t 'semesters.empty'}}</td>
+      </tr>
+    {{/each}}
+  {{/t.body}}
+{{/data-table}}

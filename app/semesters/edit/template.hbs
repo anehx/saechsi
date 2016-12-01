@@ -1,1 +1,39 @@
-{{outlet}}
+{{#if model.isNew}}
+  <h3>{{t 'semesters.new'}}</h3>
+{{else}}
+  <h3>{{t 'semesters.edit' name=model.name}}</h3>
+{{/if}}
+
+<form {{action 'save' on='submit'}}>
+  <div class="form-group">
+    <label>{{t 'semesters.school'}}</label>
+    <select class="form-control" onchange={{action (action 'setRef' 'school') value='target.value'}}>
+      <option></option>
+      {{#each schools as |s|}}
+        <option value={{s.id}}>{{s.name}}</option>
+      {{/each}}
+    </select>
+  </div>
+
+  <div class="form-group">
+    <label>{{t 'semesters.name'}}</label>
+    {{input class='form-control' type='text' value=model.name}}
+  </div>
+
+  <div class="row">
+    <div class="col-md-6 col-xs-12 form-group">
+      <label>{{t 'semesters.from'}}</label>
+      {{input class='form-control' type='text' value=model.from}}
+    </div>
+    <div class="col-md-6 col-xs-12 form-group">
+      <label>{{t 'semesters.to'}}</label>
+      {{input class='form-control' type='text' value=model.to}}
+    </div>
+  </div>
+
+  <button type="primary" class="btn btn-primary">{{t 'save'}}</button>
+  {{#unless model.isNew}}
+    {{#link-to 'semesters.delete' model tagName='button' class='btn btn-danger'}}{{t 'delete'}}{{/link-to}}
+  {{/unless}}
+  {{#link-to 'semesters.index' tagName='button' class='btn btn-default'}}{{t 'back'}}{{/link-to}}
+</form>

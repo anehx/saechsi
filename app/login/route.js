@@ -25,9 +25,8 @@ export default Route.extend({
       try {
         this.send('loading')
 
-        let data = await this.get('session').open('firebase', { provider, email, password })
+        await this.get('session').open('firebase', { provider, email, password })
 
-        this.set('session.user', data.currentUser)
         this.transitionTo('index')
       }
       catch (e) {

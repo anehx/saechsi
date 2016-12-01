@@ -1,1 +1,26 @@
-{{outlet}}
+<h3>{{t 'schools.list'}}</h3>
+
+{{#data-table as |t|}}
+  {{#t.head}}
+    <th>{{t 'schools.name'}}</th>
+    <th class="text-right">
+      {{#link-to 'schools.new' tagName='button' class='btn btn-primary btn-sm'}}
+        {{fa-icon 'plus'}}
+      {{/link-to}}
+    </th>
+  {{/t.head}}
+  {{#t.body}}
+    {{#each model as |school|}}
+      {{#unless school.isDeleted}}
+        {{#link-to 'schools.edit' school tagName='tr' class='pointer'}}
+          <td>{{school.name}}</td>
+          <td></td>
+        {{/link-to}}
+      {{/unless}}
+    {{^}}
+      <tr>
+        <td class="text-center" colspan="2">{{t 'schools.empty'}}</td>
+      </tr>
+    {{/each}}
+  {{/t.body}}
+{{/data-table}}

@@ -9,6 +9,5 @@ import {
 export default Model.extend({
   name:      attr('string'),
   active:    attr('boolean'),
-  user:      belongsTo('user'),
   semesters: hasMany('semester')
 })

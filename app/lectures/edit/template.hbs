@@ -1,4 +1,8 @@
-<h3>{{t 'lectures.edit' name=model.name}}</h3>
+{{#if model.isNew}}
+  <h3>{{t 'lectures.new'}}</h3>
+{{else}}
+  <h3>{{t 'lectures.edit' name=model.name}}</h3>
+{{/if}}
 
 <form {{action 'save' on='submit'}}>
   <div class="form-group">
@@ -12,6 +16,8 @@
   </div>
 
   <button type="primary" class="btn btn-primary">{{t 'save'}}</button>
-  {{#link-to 'lectures.delete' model.id tagName='button' class='btn btn-danger'}}{{t 'delete'}}{{/link-to}}
+  {{#unless model.isNew}}
+    {{#link-to 'lectures.delete' model.id tagName='button' class='btn btn-danger'}}{{t 'delete'}}{{/link-to}}
+  {{/unless}}
   {{#link-to 'lectures.index' tagName='button' class='btn btn-default'}}{{t 'back'}}{{/link-to}}
 </form>

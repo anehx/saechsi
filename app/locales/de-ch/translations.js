@@ -32,23 +32,41 @@ export default {
   },
 
   lectures: {
-    title: 'Lektionä',
-    list: 'Aui Lektionä',
-    new: 'Nöii Lektion ersteuue',
-    edit: 'Lektion "{{name}}" bearbeitä',
-    delete: 'Lektion "{{name}}" löschä',
-    deleteDialog: 'Wosch d Lektion "{{name}}" würk löschä?',
-    name: 'Name',
-    color: 'Farb',
-    empty: 'Keni Lektionä ihtreit...'
+    title:      'Lektionä',
+    list:       'Aui Lektionä',
+    delete:     'Lektion "{{name}}" löschä',
+    deleteText: 'Wosch d Lektion "{{name}}" würk löschä?',
+    empty:      'Keni Lektionä ihtreit...',
+    new:        'Nöii Lektion ersteuuä',
+    edit:       'Lektion "{{name}}" bearbeitä',
+    name:       'Name',
+    semester:   'Semeschter',
+    color:      'Farb'
   },
 
   semesters: {
-    title: 'Semeschter'
+    title:      'Semeschter',
+    list:       'Aui Semeschter',
+    delete:     'Semeschter "{{name}}" löschä',
+    deleteText: 'Wosch ds Semeschter "{{name}}" würk löschä?',
+    empty:      'Keni Semeschter ihtreit...',
+    new:        'Nöis Semeschter ersteuuä',
+    edit:       'Semeschter "{{name}} bearbeitä"',
+    name:       'Name',
+    school:     'Schuäu',
+    from:       'Vo',
+    to:         'Bis'
   },
 
   schools: {
-    title: 'Schuälä'
+    title:      'Schuälä',
+    list:       'Aui Schuälä',
+    delete:     'Schuäu "{{name}}" löschä',
+    deleteText: 'Wosch d Schuäu "{{name}}" würk löschä?',
+    empty:      'Keni Schuälä ihtreit...',
+    new:        'Nöii Schuäu ersteuuä',
+    edit:       'Schuäu "{{name}} bearbeitä"',
+    name:       'Name'
   },
 
   grades: {

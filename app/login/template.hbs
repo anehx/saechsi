@@ -1,19 +1,20 @@
-<form class="login-form" {{action 'signIn' on='submit'}}>
-  <h3 class="login-form-heading">
-    <img src="assets/logo.svg">
-    sächsi
-  </h3>
-
-  {{input class='form-control' type='email' value=email placeholder=(t 'login.email') autofocus=true}}
-  {{input class='form-control' type='password' value=password placeholder=(t 'login.password')}}
-
-  {{#link-to 'register'}}{{t 'login.register'}}{{/link-to}}
-
-  <button type="submit" class="btn btn-lg btn-block btn-primary">{{t 'login.login'}}</button>
-
-  {{#if error}}
-    <div class="alert alert-danger">
-      <strong>{{fa-icon 'exclamation-triangle'}}</strong> {{t (concat 'login.errors.' error)}}
-    </div>
-  {{/if}}
-</form>
+<main class="main">
+  {{#paper-form onSubmit=(route-action 'login') as |form|}}
+    {{#paper-card as |card|}}
+      {{#card.content}}
+        <div class="logo">
+          <img src="assets/logo.svg">
+          sächsi
+        </div>
+        <div class="layout layout-column">
+          {{form.input icon='person' label=(t 'login.email') value=email onChange=(action (mut email))}}
+          {{form.input icon='lock' type='password' label=(t 'login.password') value=password onChange=(action (mut password))}}
+        </div>
+      {{/card.content}}
+      {{#card.actions}}
+        {{#paper-button onClick=(transition-to 'register')}}{{t 'login.register'}}{{/paper-button}}
+        {{#form.submit-button accent=true}}{{t 'login.login'}}{{/form.submit-button}}
+      {{/card.actions}}
+    {{/paper-card}}
+  {{/paper-form}}
+</main>

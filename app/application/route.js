@@ -1,12 +1,6 @@
-import Route              from 'ember-route'
-import $                  from 'jquery'
-import service            from 'ember-service/inject'
-import LoadingSliderMixin from '../mixins/loading-slider'
-import SplashscreenMixin  from 'ember-cordova/mixins/device/splashscreen'
+import Route from 'ember-route'
 
-export default Route.extend(LoadingSliderMixin, SplashscreenMixin, {
-  i18n: service(),
-
+export default Route.extend({
   async beforeModel() {
     try {
       await this.get('session').fetch()
@@ -14,9 +8,5 @@ export default Route.extend(LoadingSliderMixin, SplashscreenMixin, {
     catch (e) {
       return
     }
-  },
-
-  afterModel() {
-    $('body').removeClass('initializing')
   }
 })

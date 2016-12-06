@@ -1,0 +1,122 @@
+$color-primary: color('blue-grey', '900');
+
+$primary: 'green';
+$accent: 'red';
+$warn: 'deep-orange';
+
+@import 'ember-paper';
+@import 'table';
+@import 'login';
+@import 'pod-styles';
+
+a {
+  color: #106CC8;
+  text-decoration: none;
+  font-weight: 400;
+  border-bottom: 1px solid rgba(64, 84, 178, 0.25);
+  transition: border-bottom 0.35s;
+}
+
+a:hover, a:focus {
+  border-bottom: 1px solid #4054B2;
+}
+
+a.md-button {
+  border-bottom: none;
+}
+
+h1, h2, h3, h4, h5, h6 {
+  margin-bottom: 1rem;
+  margin-top: 1rem;
+}
+
+h1 {
+  font-size: 3.400rem;
+  font-weight: 400;
+  line-height: 4rem;
+}
+
+h2 {
+  font-size: 2.400rem;
+  font-weight: 400;
+  line-height: 3.2rem;
+}
+
+h3 {
+  font-size: 2.000rem;
+  font-weight: 500;
+  letter-spacing: 0.005em;
+}
+
+h4 {
+  font-size: 1.600rem;
+  font-weight: 400;
+  letter-spacing: 0.010em;
+  line-height: 2.4rem;
+}
+
+p {
+  font-size: 1.6rem;
+  font-weight: 400;
+  letter-spacing: 0.010em;
+  line-height: 1.6em;
+  margin: 0.8em 0 1.6em;
+}
+
+.pointer {
+  cursor: pointer;
+}
+
+html {
+  height: 100vh;
+}
+
+body.ember-application {
+  height: 100%;
+  display: flex;
+  overflow-x: hidden;
+}
+
+body.ember-application > .ember-view {
+  flex-grow: 1;
+  display: flex;
+}
+
+.ember-burger-menu {
+  flex-grow: 1;
+}
+
+.pointer {
+  cursor: pointer;
+}
+
+body.ember-application > .ember-view > .liquid-container {
+  flex-grow: 1;
+  display: flex;
+}
+
+body.ember-application > .ember-view > .liquid-container > .liquid-child {
+  flex-grow: 1;
+}
+
+.main {
+  padding: 1rem;
+  box-sizing: border-box;
+  padding-top: calc(56px + 1rem);
+  height: 100%;
+}
+
+.liquid-child,
+.liquid-container {
+  height: 100%;
+  box-sizing: border-box;
+}
+
+.loading {
+  flex-grow: 1;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  height: 100%;
+  box-sizing: border-box;
+}

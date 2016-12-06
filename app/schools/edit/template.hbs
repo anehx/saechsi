@@ -1,18 +1,5 @@
-{{#if model.isNew}}
-  <h3>{{t 'schools.new'}}</h3>
-{{else}}
-  <h3>{{t 'schools.edit' name=model.name}}</h3>
-{{/if}}
-
-<form {{action 'save' on='submit'}}>
-  <div class="form-group">
-    <label>{{t 'schools.name'}}</label>
-    {{input class='form-control' type='text' value=model.name}}
+{{#paper-form onSubmit=(route-action 'save') as |form|}}
+  <div class="layout layout-column">
+    {{form.input label=(t 'schools.name') value=model.name onChange=(action (mut model.name))}}
   </div>
-
-  <button type="primary" class="btn btn-primary">{{t 'save'}}</button>
-  {{#unless model.isNew}}
-    {{#link-to 'schools.delete' model tagName='button' class='btn btn-danger'}}{{t 'delete'}}{{/link-to}}
-  {{/unless}}
-  {{#link-to 'schools.index' tagName='button' class='btn btn-default'}}{{t 'back'}}{{/link-to}}
-</form>
+{{/paper-form}}

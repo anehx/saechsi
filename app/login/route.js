@@ -9,31 +9,26 @@ export default Route.extend({
   },
 
   activate() {
-    $('body').addClass('sign-in')
+    $('body').addClass('login')
   },
 
   deactivate() {
-    $('body').removeClass('sign-in')
+    $('body').removeClass('login')
   },
 
   actions: {
-    async signIn() {
+    async login() {
       let provider = 'password'
       let email    = this.get('controller.email')
       let password = this.get('controller.password')
 
       try {
-        this.send('loading')
-
         await this.get('session').open('firebase', { provider, email, password })
 
         this.transitionTo('index')
       }
       catch (e) {
         this.set('controller.error', e.message)
-      }
-      finally {
-        this.send('finished')
       }
     }
   }

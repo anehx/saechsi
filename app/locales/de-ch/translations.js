@@ -11,34 +11,28 @@ export default {
   },
 
   register: {
-    register: 'Registrierä',
-    login: 'Zrugg zum Login',
-    password: 'Passwort',
+    register:       'Registrierä',
+    login:          'Login',
+    password:       'Passwort',
     passwordRepeat: 'Passwort widerholä',
-    email:    'Email'
+    email:          'Email'
   },
 
   login: {
     login:    'Iloggä',
-    register: 'No ke Account? Iz registrierä!',
+    register: 'Registrierä',
     password: 'Passwort',
-    email:    'Email',
-    errors: {
-      '`email` and `password` must be supplied':                                                   'Email und Passwort mues usgfüllt si!',
-      'The email address is badly formatted.':                                                     'Dini Email het es fausches Format!',
-      'There is no user record corresponding to this identifier. The user may have been deleted.': 'Es git ke Benutzer mit dere Email!',
-      'The password is invalid or the user does not have a password.':                             'Fausches Passwort!'
-    }
+    email:    'Email'
   },
 
   lectures: {
     title:      'Lektionä',
-    list:       'Aui Lektionä',
-    delete:     'Lektion "{{name}}" löschä',
+    index:      'Aui Lektionä',
+    delete:     'Lektion löschä',
     deleteText: 'Wosch d Lektion "{{name}}" würk löschä?',
     empty:      'Keni Lektionä ihtreit...',
     new:        'Nöii Lektion ersteuuä',
-    edit:       'Lektion "{{name}}" bearbeitä',
+    edit:       'Lektion bearbeitä',
     name:       'Name',
     semester:   'Semeschter',
     color:      'Farb'
@@ -46,12 +40,12 @@ export default {
 
   semesters: {
     title:      'Semeschter',
-    list:       'Aui Semeschter',
-    delete:     'Semeschter "{{name}}" löschä',
+    index:      'Aui Semeschter',
+    delete:     'Semeschter löschä',
     deleteText: 'Wosch ds Semeschter "{{name}}" würk löschä?',
     empty:      'Keni Semeschter ihtreit...',
     new:        'Nöis Semeschter ersteuuä',
-    edit:       'Semeschter "{{name}} bearbeitä"',
+    edit:       'Semeschter bearbeitä',
     name:       'Name',
     school:     'Schuäu',
     from:       'Vo',
@@ -60,12 +54,12 @@ export default {
 
   schools: {
     title:      'Schuälä',
-    list:       'Aui Schuälä',
-    delete:     'Schuäu "{{name}}" löschä',
+    index:      'Aui Schuälä',
+    delete:     'Schuäu löschä',
     deleteText: 'Wosch d Schuäu "{{name}}" würk löschä?',
     empty:      'Keni Schuälä ihtreit...',
     new:        'Nöii Schuäu ersteuuä',
-    edit:       'Schuäu "{{name}} bearbeitä"',
+    edit:       'Schuäu bearbeitä',
     name:       'Name'
   },
 

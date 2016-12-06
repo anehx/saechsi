@@ -6,9 +6,5 @@ export default Controller.extend(ModelControllerMixin, {
   @computed
   schools() {
     return this.store.peekAll('school')
-  },
-
-  filter() {
-    console.log(arguments)
   }
 })

@@ -8,6 +8,12 @@ export default Route.extend({
     }
   },
 
+  setupController(controller) {
+    this._super(...arguments)
+
+    controller.set('back', false)
+  },
+
   actions: {
     logout() {
       this.get('session').close()
@@ -15,7 +21,7 @@ export default Route.extend({
       this.transitionTo('login')
     },
 
-    didTransition() {
+    willTransition() {
       burgerMenu.set('open', false)
     }
   }

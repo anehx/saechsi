@@ -12,15 +12,15 @@ export default Route.extend({
   },
 
   activate() {
-    $('body').addClass('sign-in')
+    $('body').addClass('register')
   },
 
   deactivate() {
-    $('body').removeClass('sign-in')
+    $('body').removeClass('register')
   },
 
   actions: {
-    async signUp() {
+    async register() {
       try {
         let { email, password } = this.get('controller').getProperties('email', 'password')
 

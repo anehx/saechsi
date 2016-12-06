@@ -4,8 +4,9 @@ export default Mixin.create({
   modelName:      '',
   templateName:   '',
   afterSaveRoute: '',
+  backRoute:      '',
 
-  _requiredProperties: [ 'afterSaveRoute', 'templateName', 'modelName' ],
+  _requiredProperties: [ 'afterSaveRoute', 'backRoute', 'templateName', 'modelName' ],
 
   init() {
     this._super(...arguments)
@@ -15,6 +16,19 @@ export default Mixin.create({
         throw new Error(`Property \`${p}\` must not be empty`)
       }
     })
+  },
+
+  renderTemplate() {
+    this._super(...arguments)
+
+    this.render(`${this.get('templateName')}.actions`, {
+      into: 'protected',
+      outlet: 'actions'
+    })
+  },
+
+  activate() {
+    this.controllerFor('protected').set('back', this.get('backRoute'))
   },
 
   model({ id }) {
@@ -27,13 +41,13 @@ export default Mixin.create({
 
   deactivate() {
     this.get('currentModel').rollbackAttributes()
+
+    this.controllerFor('protected').set('back', false)
   },
 
   actions: {
     async save() {
       try {
-        this.send('loading')
-
         await this.get('currentModel').save()
 
         this.transitionTo(this.get('afterSaveRoute'))
@@ -41,8 +55,19 @@ export default Mixin.create({
       catch (e) {
         this.set('controller.error', e.message)
       }
+    },
+
+    async delete() {
+      try {
+        await this.get('currentModel').destroyRecord()
+
+        this.transitionTo(this.get('afterSaveRoute'))
+      }
+      catch (e) {
+        this.set('controller.error', e.message)
+      }
       finally {
-        this.send('finished')
+        this.set('controller.showDeleteDialog', false)
       }
     }
   }

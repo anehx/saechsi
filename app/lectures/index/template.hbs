@@ -1,28 +1,22 @@
-<h3>{{t 'lectures.list'}}</h3>
-
-{{#data-table as |t|}}
-  {{#t.head}}
+<table>
+  <thead>
     <th>{{t 'lectures.name'}}</th>
     <th>{{t 'lectures.color'}}</th>
-    <th class="text-right">
-      {{#link-to 'lectures.new' tagName='button' class='btn btn-primary btn-sm'}}
-        {{fa-icon 'plus'}}
-      {{/link-to}}
-    </th>
-  {{/t.head}}
-  {{#t.body}}
+  </thead>
+  <tbody>
     {{#each model as |lecture|}}
       {{#unless lecture.isDeleted}}
         {{#link-to 'lectures.edit' lecture.id tagName='tr' class='pointer'}}
           <td>{{lecture.name}}</td>
           <td>{{lecture.color}}</td>
-          <td></td>
         {{/link-to}}
       {{/unless}}
     {{^}}
       <tr>
-        <td class="text-center" colspan="3">{{t 'lectures.empty'}}</td>
+        <td class="text-center" colspan="2">{{t 'lectures.empty'}}</td>
       </tr>
     {{/each}}
-  {{/t.body}}
-{{/data-table}}
+  </tbody>
+</table>
+
+{{add-button onClick=(transition-to 'lectures.new')}}

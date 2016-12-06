@@ -10,18 +10,8 @@ module.exports = function(defaults) {
     babel: {
       optional: [ 'es7.decorators', 'es7.asyncFunctions' ],
       includePolyfill: true
-    },
-    lessOptions: {
-      paths: [
-        'bower_components/bootstrap/less',
-        'bower_components/flat-ui/less'
-      ]
     }
   })
 
-  app.import('vendor/reset.css')
-
-  let fonts = funnel('bower_components/flat-ui/fonts', { destDir: '/fonts' })
-
-  return app.toTree([ fonts ])
+  return app.toTree()
 }

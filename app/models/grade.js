@@ -2,22 +2,21 @@ import Model         from 'ember-data/model'
 import attr          from 'ember-data/attr'
 import { belongsTo } from 'ember-data/relationships'
 
-import computed, {
-  readOnly
-} from 'ember-computed-decorators'
+import {
+  validator,
+  buildValidations
+} from 'ember-cp-validations'
 
-export default Model.extend({
-  name:      attr('string'),
-  score:     attr('number'),
-  weighting: attr('number'),
-  date:      attr('date'),
-  lecture:   belongsTo('lecture'),
+const Validations = buildValidations({
+  score: [
+    validator('presence', true),
+    validator('number', { gt: 1, lte: 6 })
+  ],
+  subject: validator('presence', true)
+})
 
-  @readOnly
-  @computed('lecture.name', 'lecture.grades.length')
-  nameSuggestion(lecture, count) {
-    const next = parseInt(count, 10) + 1
-
-    return `${lecture} ${next}`
-  }
+export default Model.extend(Validations, {
+  score:   attr('number'),
+  date:    attr('date'),
+  subject: belongsTo('subject')
 })

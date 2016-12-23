@@ -23,4 +23,4 @@
 {{#unless model.isNew}}
   {{#paper-button iconButton=true onClick=(action (mut showDeleteDialog) true)}}{{paper-icon 'delete'}}{{/paper-button}}
 {{/unless}}
-{{#paper-button iconButton=true onClick=(route-action 'save')}}{{paper-icon 'check'}}{{/paper-button}}
+{{#paper-button disabled=(not model.validations.isValid) iconButton=true onClick=(route-action 'save')}}{{paper-icon 'check'}}{{/paper-button}}

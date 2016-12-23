@@ -23,15 +23,11 @@ AppRouter.map(function() {
       this.route('delete', { path: '/delete/:id' })
     })
 
-    this.route('lectures', { resetNamespace }, function() {
+    this.route('subjects', { resetNamespace }, function() {
       this.route('new')
-      this.route('edit', { path: '/edit/:id' })
-      this.route('delete', { path: '/delete/:id' })
-    })
-
-    this.route('schools', { resetNamespace }, function() {
-      this.route('new')
-      this.route('edit', { path: '/edit/:id' })
+      this.route('edit', { path: '/edit/:id' }, function() {
+        this.route('actions')
+      })
       this.route('delete', { path: '/delete/:id' })
     })
 
@@ -43,7 +39,9 @@ AppRouter.map(function() {
 
     this.route('goals', { resetNamespace }, function() {
       this.route('new')
-      this.route('edit', { path: '/edit/:id' })
+      this.route('edit', { path: '/edit/:id' }, function() {
+        this.route('actions');
+      })
       this.route('delete', { path: '/delete/:id' })
     })
   })

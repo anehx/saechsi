@@ -16,15 +16,6 @@
 
       {{paper-divider}}
 
-      {{#paper-item onClick=(transition-to 'schools.index')}}
-        <span>
-          {{paper-icon 'home'}}
-          {{t 'schools.title'}}
-        </span>
-      {{/paper-item}}
-
-      {{paper-divider}}
-
       {{#paper-item onClick=(transition-to 'semesters.index')}}
         <span>
           {{paper-icon 'today'}}
@@ -34,10 +25,10 @@
 
       {{paper-divider}}
 
-      {{#paper-item onClick=(transition-to 'lectures.index')}}
+      {{#paper-item onClick=(transition-to 'subjects.index')}}
         <span>
           {{paper-icon 'schedule'}}
-          {{t 'lectures.title'}}
+          {{t 'subjects.title'}}
         </span>
       {{/paper-item}}
 
@@ -47,6 +38,15 @@
         <span>
           {{paper-icon 'check'}}
           {{t 'grades.title'}}
+        </span>
+      {{/paper-item}}
+
+      {{paper-divider}}
+
+      {{#paper-item onClick=(transition-to 'goals.index')}}
+        <span>
+          {{paper-icon 'thumb up'}}
+          {{t 'goals.title'}}
         </span>
       {{/paper-item}}
 

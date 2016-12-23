@@ -1,0 +1,8 @@
+{{#paper-form onSubmit=(route-action 'save') as |form|}}
+  <div class="layout layout-column">
+    {{#form.select label=(t 'subjects.semester') disabled=semesterDisabled selected=model.semester options=semesters onChange=(action (mut model.semester)) as |semester|}}
+      {{semester.name}}
+    {{/form.select}}
+    {{form.input label=(t 'subjects.name') value=model.name onChange=(action (mut model.name))}}
+  </div>
+{{/paper-form}}

@@ -6,10 +6,18 @@ import {
   hasMany
 } from 'ember-data/relationships'
 
-export default Model.extend({
+import {
+  validator,
+  buildValidations
+} from 'ember-cp-validations'
+
+const Validations = buildValidations({
+  name: validator('presence', true)
+})
+
+export default Model.extend(Validations, {
   name:     attr('string'),
   from:     attr('date'),
   to:       attr('date'),
-  school:   belongsTo('school'),
-  lectures: hasMany('lecture')
+  subjects: hasMany('subject')
 })

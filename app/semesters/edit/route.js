@@ -9,9 +9,5 @@ export default Route.extend(ModelRouteMixin, TitleRouteMixin, {
   modelName:      'semester',
   templateName:   'semesters.edit',
   afterSaveRoute: 'semesters.index',
-  backRoute:      'semesters.index',
-
-  beforeModel() {
-    return this.store.findAll('school')
-  }
+  backRoute:      'semesters.index'
 })

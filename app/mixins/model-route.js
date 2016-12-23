@@ -47,6 +47,8 @@ export default Mixin.create({
 
   actions: {
     async save() {
+      if (!this.get('currentModel.validations.isValid')) return
+
       try {
         await this.get('currentModel').save()
 

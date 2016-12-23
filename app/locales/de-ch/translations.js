@@ -25,7 +25,7 @@ export default {
     email:    'Email'
   },
 
-  lectures: {
+  subjects: {
     title:      'Lektionä',
     index:      'Aui Lektionä',
     delete:     'Lektion löschä',
@@ -34,8 +34,7 @@ export default {
     new:        'Nöii Lektion ersteuuä',
     edit:       'Lektion bearbeitä',
     name:       'Name',
-    semester:   'Semeschter',
-    color:      'Farb'
+    semester:   'Semeschter'
   },
 
   semesters: {
@@ -47,23 +46,15 @@ export default {
     new:        'Nöis Semeschter ersteuuä',
     edit:       'Semeschter bearbeitä',
     name:       'Name',
-    school:     'Schuäu',
     from:       'Vo',
     to:         'Bis'
   },
 
-  schools: {
-    title:      'Schuälä',
-    index:      'Aui Schuälä',
-    delete:     'Schuäu löschä',
-    deleteText: 'Wosch d Schuäu "{{name}}" würk löschä?',
-    empty:      'Keni Schuälä ihtreit...',
-    new:        'Nöii Schuäu ersteuuä',
-    edit:       'Schuäu bearbeitä',
-    name:       'Name'
-  },
-
   grades: {
     title: 'Notä'
+  },
+
+  goals: {
+    title: 'Ziu'
   }
 }

@@ -1,0 +1,110 @@
+<?xml version="1.0" encoding="UTF-8" standalone="no"?>
+<svg
+   xmlns:dc="http://purl.org/dc/elements/1.1/"
+   xmlns:cc="http://creativecommons.org/ns#"
+   xmlns:rdf="http://www.w3.org/1999/02/22-rdf-syntax-ns#"
+   xmlns:svg="http://www.w3.org/2000/svg"
+   xmlns="http://www.w3.org/2000/svg"
+   xmlns:sodipodi="http://sodipodi.sourceforge.net/DTD/sodipodi-0.dtd"
+   xmlns:inkscape="http://www.inkscape.org/namespaces/inkscape"
+   width="2732px"
+   height="2732px"
+   viewBox="0 0 2732 2732"
+   version="1.1"
+   id="svg4255"
+   inkscape:version="0.91 r13725"
+   sodipodi:docname="splash.svg">
+  <metadata
+     id="metadata4334">
+    <rdf:RDF>
+      <cc:Work
+         rdf:about="">
+        <dc:format>image/svg+xml</dc:format>
+        <dc:type
+           rdf:resource="http://purl.org/dc/dcmitype/StillImage" />
+      </cc:Work>
+    </rdf:RDF>
+  </metadata>
+  <sodipodi:namedview
+     pagecolor="#ffffff"
+     bordercolor="#666666"
+     borderopacity="1"
+     objecttolerance="10"
+     gridtolerance="10"
+     guidetolerance="10"
+     inkscape:pageopacity="0"
+     inkscape:pageshadow="2"
+     inkscape:window-width="1918"
+     inkscape:window-height="1182"
+     id="namedview4332"
+     showgrid="true"
+     showguides="true"
+     inkscape:guide-bbox="true"
+     inkscape:zoom="0.25675327"
+     inkscape:cx="1245.0797"
+     inkscape:cy="1112.7518"
+     inkscape:window-x="3520"
+     inkscape:window-y="16"
+     inkscape:window-maximized="1"
+     inkscape:current-layer="svg4255">
+    <inkscape:grid
+       type="xygrid"
+       id="grid4446" />
+  </sodipodi:namedview>
+  <!-- Generator: Sketch 40.1 (33804) - http://www.bohemiancoding.com/sketch -->
+  <title
+     id="title4257">safe-area</title>
+  <desc
+     id="desc4259">Created with Sketch.</desc>
+  <defs
+     id="defs4261">
+    <radialGradient
+       cx="50%"
+       cy="50%"
+       fx="50%"
+       fy="50%"
+       r="67.646262%"
+       id="radialGradient-1">
+      <stop
+         stop-color="#AA076B"
+         offset="0%"
+         id="stop4264" />
+      <stop
+         stop-color="#61045F"
+         offset="100%"
+         id="stop4266" />
+    </radialGradient>
+  </defs>
+  <g
+     id="Page-1"
+     stroke="none"
+     stroke-width="1"
+     fill="none"
+     fill-rule="evenodd">
+    <rect
+       id="Background"
+       fill="url(#radialGradient-1)"
+       x="0"
+       y="0"
+       width="2732"
+       height="2732"
+       style="fill:#4caf50;fill-opacity:1" />
+  </g>
+  <g
+     id="g4426"
+     transform="matrix(3.9689922,0,0,3.9689922,1110.1302,1109.9487)">
+    <g
+       id="g4428">
+      <path
+         id="path4430"
+         d="m 40.5,61.1 c -1.6,-1.6 -4.2,-1.6 -5.8,0 -1.6,1.6 -1.6,4.2 0,5.8 l 18.9,18.9 c 0.8,0.8 1.8,1.2 2.9,1.2 0.1,0 0.1,0 0.2,0 1.1,-0.1 2.2,-0.6 3,-1.5 L 107,28.8 c 1.4,-1.7 1.2,-4.3 -0.5,-5.8 -1.7,-1.4 -4.3,-1.2 -5.8,0.5 L 56.2,76.8 40.5,61.1 Z"
+         inkscape:connector-curvature="0"
+         style="fill:#ffffff" />
+      <path
+         id="path4432"
+         d="M 95.1,15.3 C 72.1,0.9 42.6,4.3 23.4,23.5 0.8,46.1 0.8,83 23.4,105.6 c 11.3,11.3 26.2,17 41,17 14.8,0 29.7,-5.7 41,-17 19.3,-19.3 22.6,-48.9 8.1,-71.9 -1.2,-1.9 -3.7,-2.5 -5.6,-1.3 -1.9,1.2 -2.5,3.7 -1.3,5.6 12.5,19.8 9.6,45.2 -7,61.8 -19.4,19.4 -51.1,19.4 -70.5,0 C 9.7,80.4 9.7,48.7 29.1,29.3 45.7,12.8 71,9.9 90.8,22.2 c 1.9,1.2 4.4,0.6 5.6,-1.3 1.2,-1.9 0.6,-4.4 -1.3,-5.6 z"
+         inkscape:connector-curvature="0"
+         style="fill:#ffffff" />
+    </g>
+  </g>
+</svg>

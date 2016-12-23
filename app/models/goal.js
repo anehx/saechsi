@@ -2,8 +2,20 @@ import Model         from 'ember-data/model'
 import attr          from 'ember-data/attr'
 import { belongsTo } from 'ember-data/relationships'
 
-export default Model.extend({
+import {
+  validator,
+  buildValidations
+} from 'ember-cp-validations'
+
+const Validations = buildValidations({
+  score: [
+    validator('number', { gt: 1, lte: 6 }),
+    validator('presence', true)
+  ]
+})
+
+export default Model.extend(Validations, {
   score:    attr('number'),
-  lecture:  belongsTo('lecture'),
+  subject:  belongsTo('subject'),
   semester: belongsTo('semester')
 })

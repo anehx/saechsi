@@ -7,19 +7,7 @@ import TitleRouteMixin           from 'saechsi/mixins/title-route'
 export default Route.extend(TitleRouteMixin, {
   title: t('semesters.index'),
 
-  beforeModel() {
-    return this.store.findAll('school')
-  },
-
   model() {
     return this.store.findAll('semester')
-  },
-
-  setupController(controller) {
-    this._super(...arguments)
-
-    controller.set('schools', computed(() => {
-      return this.store.peekAll('school')
-    }))
   }
 })

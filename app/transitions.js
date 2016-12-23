@@ -7,13 +7,7 @@ export default function() {
   )
 
   this.transition(
-    this.fromRoute('lectures.index'),
-    this.use('toLeft'),
-    this.reverse('toRight')
-  )
-
-  this.transition(
-    this.fromRoute('schools.index'),
+    this.fromRoute('subjects.index'),
     this.use('toLeft'),
     this.reverse('toRight')
   )

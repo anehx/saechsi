@@ -2,7 +2,6 @@
   <thead>
     <tr>
       <th>{{t 'semesters.name'}}</th>
-      <th>{{t 'semesters.school'}}</th>
       <th>{{t 'semesters.from'}}</th>
       <th>{{t 'semesters.to'}}</th>
     </tr>
@@ -12,7 +11,6 @@
       {{#unless semester.isDeleted}}
         {{#link-to 'semesters.edit' semester tagName='tr' class='pointer'}}
           <td>{{semester.name}}</td>
-          <td>{{semester.school.name}}</td>
           <td>{{semester.from}}</td>
           <td>{{semester.to}}</td>
         {{/link-to}}

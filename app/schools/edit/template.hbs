@@ -1,5 +1,0 @@
-{{#paper-form onSubmit=(route-action 'save') as |form|}}
-  <div class="layout layout-column">
-    {{form.input label=(t 'schools.name') value=model.name onChange=(action (mut model.name))}}
-  </div>
-{{/paper-form}}

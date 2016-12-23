@@ -1,10 +1,7 @@
 {{#paper-form onSubmit=(route-action 'save') as |form|}}
   <div class="layout layout-column">
-    {{#form.select label=(t 'semesters.school') selected=model.school options=schools onChange=(action (mut model.school)) as |school|}}
-      {{school.name}}
-    {{/form.select}}
-    {{form.input label=(t 'semesters.name') value=model.name onChange=(action (mut model.name))}}
-    {{form.input label=(t 'semesters.from') value=model.from onChange=(action (mut model.from))}}
-    {{form.input label=(t 'semesters.to')   value=model.to   onChange=(action (mut model.to))}}
+    {{form.input label=(t 'semesters.name') value=model.name onChange=(action (mut model.name)) errors=model.validations.attrs.name.messages}}
+    {{form.input label=(t 'semesters.from') type='date' value=model.from onChange=(action (mut model.from)) errors=model.validations.attrs.from.messages}}
+    {{form.input label=(t 'semesters.to')   type='date' value=model.to   onChange=(action (mut model.to)) errors=model.validations.attrs.to.messages}}
   </div>
 {{/paper-form}}

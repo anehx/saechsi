@@ -1,4 +1,5 @@
 import Route                     from 'ember-route'
+import moment                    from 'moment'
 import { translationMacro as t } from 'ember-i18n'
 import ModelRouteMixin           from 'saechsi/mixins/model-route'
 import TitleRouteMixin           from 'saechsi/mixins/title-route'
@@ -12,7 +13,11 @@ export default Route.extend(ModelRouteMixin, TitleRouteMixin, {
   afterSaveRoute: 'semesters.index',
   backRoute:      'semesters.index',
 
-  beforeModel() {
-    return this.store.findAll('school')
+  afterModel(semester) {
+    let middleOfYear = moment().endOf('year').subtract(6, 'months')
+    let now          = moment()
+    let part         = now >= middleOfYear ? 2 : 1
+
+    semester.set('name', `${now.get('year')} / ${part}`)
   }
 })

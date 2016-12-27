@@ -4,10 +4,7 @@
     "ember": "~2.10.0",
     "ember-cli-shims": "~0.1.3",
     "firebase": "^3.6.0",
-    "font-awesome": "~4.5.0",
-    "flat-ui": "^2.3.0",
-    "chartjs": "2.1.6",
-    "hammer.js": "^2.0.8",
-    "matchMedia": "0.2.0"
+    "Ionicons": "ionicons#^2.0.1",
+    "normalize-scss": "normalize.scss#^6.0.0"
   }
 }

@@ -1,0 +1,16 @@
+<form {{action 'signIn' on='submit'}}>
+  <div class="sign-input">
+    {{sx-icon 'email'}}
+    {{input type='email' value=email}}
+  </div>
+  <div class="sign-input">
+    {{sx-icon 'locked'}}
+    {{input type='password' value=password}}
+  </div>
+  <div class="sign-input">
+    {{sx-icon 'loop'}}
+    {{input type='password' value=password2}}
+  </div>
+
+  <button type="submit" class="sign-button">{{t 'sign.in'}}</button>
+</form>

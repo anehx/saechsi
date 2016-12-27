@@ -1,0 +1,12 @@
+$color-primary:   rgb(  0, 184, 212);
+$color-secondary: rgb( 40,  40,  40);
+$color-error:     rgb(244,  67,  54);
+$color-warning:   rgb(255, 152,   0);
+$color-success:   rgb( 76, 175,  80);
+
+$color-bg:   lighten($color-secondary,  5%);
+$color-font: lighten($color-secondary, 50%);
+
+$sx-navigation-height: 60px;
+$sx-toolbar-height:    60px;
+$sx-tabs-height:       40px;

@@ -1,0 +1,11 @@
+{{#if model}}
+  {{#sx-list}}
+    {{#each model as |semester|}}
+      {{#sx-list-item}}
+        {{semester.name}}
+      {{/sx-list-item}}
+    {{/each}}
+  {{/sx-list}}
+{{else}}
+  empty state
+{{/if}}

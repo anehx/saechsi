@@ -1,0 +1,100 @@
+.sign-header {
+  background-color: $color-secondary;
+  border-bottom: 1px solid lighten($color-bg, 5%);
+}
+
+.sign-header h1 {
+  margin: 0;
+  font-weight: 500;
+  display: flex;
+  align-items: center;
+
+  i {
+    margin-right: 1rem;
+    font-size: 250%;
+  }
+}
+
+.sign-header-nav {
+  display: flex;
+  margin: 0;
+  padding: 0;
+  list-style: none;
+  justify-content: flex-end;
+
+  li {
+    margin-left: 2rem;
+
+    a {
+      color: lighten($color-secondary, 10%);
+      text-decoration: none;
+      position: relative;
+      transition: color 300ms ease;
+      outline: none;
+
+      &::before {
+        content: '';
+        height: 1px;
+        transform: translateX(-50%);
+        position: absolute;
+        bottom: -0.5rem;
+        left: 50%;
+        width: 60%;
+        background-color: transparent;
+        transition: background-color 300ms ease;
+      }
+
+      &.active {
+        color: $color-font;
+      }
+
+      &.active::before {
+        background-color: $color-font;
+      }
+    }
+  }
+}
+
+.sign-header,
+.sign-body {
+  padding: 1rem;
+}
+
+.sign-body {
+  display: flex;
+  flex-grow: 1;
+}
+
+.sign-input {
+  display: flex;
+  position: relative;
+  margin: 1rem 0;
+
+  input {
+    background-color: transparent;
+    border: none;
+    border-bottom: 1px solid $color-font;
+    width: 100%;
+    padding: 1rem 0;
+    text-align: center;
+    color: $color-font;
+  }
+
+  i {
+    position: absolute;
+    left: 0;
+    top: 50%;
+    transform: translateY(-50%);
+  }
+}
+
+.sign-button {
+  font: inherit;
+  background-color: darken($color-bg, 5%);
+  border: none;
+  color: $color-font;
+  margin-top: 2rem;
+  padding: 0.7rem;
+  cursor: pointer;
+  width: 100%;
+}

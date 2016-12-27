@@ -1,7 +1,4 @@
 export default {
-  login: {
-    login:    'Einloggen',
-    password: 'Passwort',
-    email:    'Email'
-  }
+  signIn: 'Einloggen',
+  signUp: 'Registrieren'
 }

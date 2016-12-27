@@ -10,40 +10,29 @@ const resetNamespace = true
 
 /* eslint-disable max-nested-callbacks */
 AppRouter.map(function() {
-  this.route('login')
-  this.route('logout')
-  this.route('register')
+  this.route('sign', function() {
+    this.route('in')
+    this.route('up')
+  })
 
   this.route('protected', { path: '/' }, function() {
-    this.route('index', { path: '/', resetNamespace })
+    this.route('trends', { path: '/', resetNamespace })
 
-    this.route('grades', { resetNamespace }, function() {
-      this.route('new')
-      this.route('edit', { path: '/edit/:id' })
-      this.route('delete', { path: '/delete/:id' })
+    this.route('performance', { resetNamespace }, function() {
+      this.route('grades')
+      this.route('goals')
     })
 
-    this.route('subjects', { resetNamespace }, function() {
-      this.route('new')
-      this.route('edit', { path: '/edit/:id' }, function() {
-        this.route('actions')
+    this.route('timetable', { resetNamespace }, function() {
+      this.route('semesters', function() {
+        this.route('new')
+        this.route('edit', { path: '/:id' })
       })
-      this.route('delete', { path: '/delete/:id' })
+      this.route('subjects')
     })
 
-    this.route('semesters', { resetNamespace }, function() {
-      this.route('new')
-      this.route('edit', { path: '/edit/:id' })
-      this.route('delete', { path: '/delete/:id' })
-    })
-
-    this.route('goals', { resetNamespace }, function() {
-      this.route('new')
-      this.route('edit', { path: '/edit/:id' }, function() {
-        this.route('actions');
-      })
-      this.route('delete', { path: '/delete/:id' })
-    })
+    this.route('settings', { resetNamespace })
+    this.route('logout', { resetNamespace })
   })
 })
 

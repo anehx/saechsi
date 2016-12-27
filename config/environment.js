@@ -1,18 +1,21 @@
-/* jshint node: true */
+/* global module */
+
+"use strict"
 
 module.exports = function(environment) {
-  var ENV = {
+  let ENV = {
+    environment,
+
     modulePrefix: 'saechsi',
-    environment: environment,
     rootURL: '/',
     locationType: 'hash',
 
     firebase: {
-      apiKey: "AIzaSyBxEwOoyG40YQu6G9-OsEZOmG-gvBeaKlM",
-      authDomain: "saechsi-b9703.firebaseapp.com",
-      databaseURL: "https://saechsi-b9703.firebaseio.com",
-      storageBucket: "saechsi-b9703.appspot.com",
-      messagingSenderId: "127441807291"
+      apiKey: 'AIzaSyBxEwOoyG40YQu6G9-OsEZOmG-gvBeaKlM',
+      authDomain: 'saechsi-b9703.firebaseapp.com',
+      databaseURL: 'https://saechsi-b9703.firebaseio.com',
+      storageBucket: 'saechsi-b9703.appspot.com',
+      messagingSenderId: '127441807291'
     },
 
     torii: {
@@ -20,7 +23,13 @@ module.exports = function(environment) {
     },
 
     i18n: {
-      defaultLocale: 'de-ch'
+      defaultLocale: 'en-us'
+    },
+
+    webFontConfig: {
+      google: {
+        families: [ 'Quicksand' ]
+      }
     },
 
     EmberENV: {
@@ -34,7 +43,7 @@ module.exports = function(environment) {
       // Here you can pass flags/options to your application instance
       // when it is created
     }
-  };
+  }
 
   if (environment === 'development') {
     // ENV.APP.LOG_RESOLVER = true;
@@ -46,18 +55,18 @@ module.exports = function(environment) {
 
   if (environment === 'test') {
     // Testem prefers this...
-    ENV.locationType = 'none';
+    ENV.locationType = 'none'
 
     // keep test console output quieter
-    ENV.APP.LOG_ACTIVE_GENERATION = false;
-    ENV.APP.LOG_VIEW_LOOKUPS = false;
+    ENV.APP.LOG_ACTIVE_GENERATION = false
+    ENV.APP.LOG_VIEW_LOOKUPS = false
 
-    ENV.APP.rootElement = '#ember-testing';
+    ENV.APP.rootElement = '#ember-testing'
   }
 
   if (environment === 'production') {
-
+    // production settings
   }
 
-  return ENV;
-};
+  return ENV
+}

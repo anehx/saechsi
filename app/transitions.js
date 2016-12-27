@@ -1,25 +1,35 @@
 export default function() {
   this.transition(
-    this.fromRoute('login'),
-    this.toRoute('register'),
+    this.fromRoute('sign.in'),
+    this.toRoute('sign.up'),
     this.use('toLeft'),
     this.reverse('toRight')
   )
 
   this.transition(
-    this.fromRoute('subjects.index'),
+    this.fromRoute('trends'),
+    this.toRoute('timetable'),
     this.use('toLeft'),
     this.reverse('toRight')
   )
 
   this.transition(
-    this.fromRoute('semesters.index'),
+    this.fromRoute('timetable'),
+    this.toRoute('performance'),
     this.use('toLeft'),
     this.reverse('toRight')
   )
 
   this.transition(
-    this.fromRoute('grades.index'),
+    this.fromRoute('performance'),
+    this.toRoute('settings'),
+    this.use('toLeft'),
+    this.reverse('toRight')
+  )
+
+  this.transition(
+    this.fromRoute('settings'),
+    this.toRoute('trends'),
     this.use('toLeft'),
     this.reverse('toRight')
   )

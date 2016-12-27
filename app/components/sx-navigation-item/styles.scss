@@ -1,0 +1,23 @@
+& {
+  flex: 1 0 auto;
+}
+
+a {
+  height: $sx-navigation-height;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  color: white;
+  background-color: $color-secondary;
+  border-top: 2px solid lighten($color-secondary, 10%);
+  transition: background-color 300ms ease;
+}
+
+a i {
+  font-size: 26px;
+}
+
+a.active {
+  background-color: $color-primary;
+  border-top: 2px solid lighten($color-primary, 10%);
+}

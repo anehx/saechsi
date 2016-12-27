@@ -1,88 +1,16 @@
-{{#burger-menu animation='reveal' itemAnimation='stack' as |burger|}}
-  {{#burger.menu itemTagName='li' as |menu|}}
-    <div class="bm-menu-header">
-      <img src="assets/logo-white.svg">
-      <span>sächsi</span>
-    </div>
-    {{#paper-list}}
-      {{paper-divider}}
+{{#if loading}}
+  {{#ember-wormhole to='loading'}}
+    <div class="loader"></div>
+  {{/ember-wormhole}}
+{{/if}}
 
-      {{#paper-item onClick=(transition-to 'index')}}
-        <span>
-          {{paper-icon 'dashboard'}}
-          {{t 'dashboard.title'}}
-        </span>
-      {{/paper-item}}
+<main class="main-content">
+  {{liquid-outlet}}
+</main>
 
-      {{paper-divider}}
-
-      {{#paper-item onClick=(transition-to 'semesters.index')}}
-        <span>
-          {{paper-icon 'today'}}
-          {{t 'semesters.title'}}
-        </span>
-      {{/paper-item}}
-
-      {{paper-divider}}
-
-      {{#paper-item onClick=(transition-to 'subjects.index')}}
-        <span>
-          {{paper-icon 'schedule'}}
-          {{t 'subjects.title'}}
-        </span>
-      {{/paper-item}}
-
-      {{paper-divider}}
-
-      {{#paper-item onClick=(transition-to 'grades.index')}}
-        <span>
-          {{paper-icon 'check'}}
-          {{t 'grades.title'}}
-        </span>
-      {{/paper-item}}
-
-      {{paper-divider}}
-
-      {{#paper-item onClick=(transition-to 'goals.index')}}
-        <span>
-          {{paper-icon 'thumb up'}}
-          {{t 'goals.title'}}
-        </span>
-      {{/paper-item}}
-
-      {{paper-divider}}
-
-      {{#paper-item onClick=(transition-to 'logout')}}
-        <span>
-          {{paper-icon 'power settings new'}}
-          {{t 'logout'}}
-        </span>
-      {{/paper-item}}
-
-      {{paper-divider}}
-    {{/paper-list}}
-  {{/burger.menu}}
-
-  {{#burger.outlet}}
-    {{#paper-toolbar}}
-      {{#paper-toolbar-tools}}
-        {{#if back}}
-          {{#paper-button iconButton=true onClick=(transition-to back)}}
-            {{paper-icon 'keyboard backspace'}}
-          {{/paper-button}}
-        {{else}}
-          {{#paper-button iconButton=true onClick=(action burger.state.actions.toggle)}}
-            {{paper-icon 'menu'}}
-          {{/paper-button}}
-        {{/if}}
-        {{title}}
-        <div class="flex"></div>
-        {{outlet 'actions'}}
-      {{/paper-toolbar-tools}}
-    {{/paper-toolbar}}
-
-    <main class="main">
-      {{liquid-outlet}}
-    </main>
-  {{/burger.outlet}}
-{{/burger-menu}}
+{{#sx-navigation}}
+  {{sx-navigation-item link='trends' icon=''}}
+  {{sx-navigation-item link='timetable' icon=''}}
+  {{sx-navigation-item link='performance' icon=''}}
+  {{sx-navigation-item link='settings' icon=''}}
+{{/sx-navigation}}

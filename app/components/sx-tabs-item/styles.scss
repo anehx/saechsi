@@ -1,0 +1,29 @@
+& {
+  display: flex;
+  flex: 1 0 auto;
+}
+
+a {
+  background-color: $color-secondary;
+  height: $sx-tabs-height;
+  display: flex;
+  flex-grow: 1;
+  align-items: center;
+  justify-content: center;
+  position: relative;
+  color: darkgrey;
+}
+
+a.active {
+  color: white;
+}
+
+a.active::before {
+  content: '';
+  height: 5px;
+  background-color: $color-primary;
+  position: absolute;
+  left: 0;
+  right: 0;
+  bottom: 0;
+}

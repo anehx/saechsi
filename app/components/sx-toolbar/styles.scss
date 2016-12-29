@@ -1,20 +1,52 @@
 & {
-  height: $sx-toolbar-height;
   position: fixed;
   top: 0;
   left: 0;
   right: 0;
+  z-index: 9000;
+  display: flex;
+  height: $sx-toolbar-height;
+  width: 100%;
+  background-color: $color-secondary;
 }
 
-h1 {
+.sx-toolbar-back,
+.sx-toolbar-delete,
+.sx-toolbar-title {
   display: flex;
   align-items: center;
+}
+
+.sx-toolbar-back,
+.sx-toolbar-delete {
+  flex: 0 0 20%;
+
+  span {
+    cursor: pointer;
+    display: flex;
+    align-items: center;
+
+    i {
+      font-size: 28px;
+    }
+  }
+}
+
+.sx-toolbar-title {
+  flex: 1 0 auto;
   justify-content: center;
-  margin: 0;
-  height: 60px;
-  width: 100%;
-  font-size: 24px;
-  font-weight: 500;
-  color: white;
-  background-color: $color-secondary;
+  font-size: 20px;
+}
+
+.sx-toolbar-delete {
+  justify-content: flex-end;
+  padding-right: 1rem;
+}
+
+.sx-toolbar-back {
+  padding-left: 1rem;
+
+  i {
+    margin-right: 0.5rem;
+  }
 }

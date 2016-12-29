@@ -1,0 +1,14 @@
+<form {{action 'save' on='submit'}}>
+  {{sx-select
+    model       = semesters
+    value       = model.semester
+    placeholder = (t 'timetable.subjects.selectSemester')
+    labelKey    = 'name'
+    valueKey    = 'id'
+    onSelect    = (route-action 'setSemester')
+  }}
+
+  {{sx-input value=model.name placeholder=(t 'timetable.subjects.enterName')}}
+
+  <button type="submit">Save</button>
+</form>

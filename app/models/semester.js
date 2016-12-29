@@ -1,5 +1,7 @@
-import Model from 'ember-data/model'
-import attr  from 'ember-data/attr'
+import Model    from 'ember-data/model'
+import attr     from 'ember-data/attr'
+import moment   from 'moment'
+import computed from 'ember-computed-decorators'
 
 import {
   belongsTo,
@@ -17,7 +19,14 @@ const Validations = buildValidations({
 
 export default Model.extend(Validations, {
   name:     attr('string'),
-  from:     attr('date'),
-  to:       attr('date'),
-  subjects: hasMany('subject')
+  from:     attr('moment'),
+  to:       attr('moment'),
+  subjects: hasMany('subject'),
+
+  @computed('from', 'to')
+  active(from, to) {
+    let now = moment()
+
+    return now < to && now > from
+  }
 })

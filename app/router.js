@@ -19,8 +19,14 @@ AppRouter.map(function() {
     this.route('trends', { path: '/', resetNamespace })
 
     this.route('performance', { resetNamespace }, function() {
-      this.route('grades')
-      this.route('goals')
+      this.route('grades', function() {
+        this.route('new')
+        this.route('edit', { path: '/:id' })
+      })
+      this.route('goals', function() {
+        this.route('new')
+        this.route('edit', { path: '/:id' })
+      })
     })
 
     this.route('timetable', { resetNamespace }, function() {
@@ -28,7 +34,10 @@ AppRouter.map(function() {
         this.route('new')
         this.route('edit', { path: '/:id' })
       })
-      this.route('subjects')
+      this.route('subjects', function() {
+        this.route('new')
+        this.route('edit', { path: '/:id' })
+      })
     })
 
     this.route('settings', { resetNamespace })

@@ -1,0 +1,46 @@
+& {
+  border-bottom: 1px solid $color-font;
+}
+
+.es-control {
+  background-color: transparent;
+  border: none;
+  border-radius: 0;
+  box-shadow: none !important;
+  padding: 1rem;
+}
+
+.es-control input {
+  background-color: transparent;
+  color: $color-font;
+}
+
+.es-arrow-zone::before {
+  content: '\f3d0';
+  font-family: "Ionicons";
+  color: $color-font;
+}
+
+.es-arrow-zone > .es-arrow {
+  display: none;
+}
+
+.es-options {
+  background-color: $color-secondary;
+  border: none;
+  border-radius: 0;
+  box-shadow: 0 5px 5px -5px rgba(0,0,0,0.25);
+}
+
+.es-option {
+  padding: 0.5rem 1rem;
+}
+
+.es-option:last-child {
+  border-bottom-left-radius:  0 !important;
+  border-bottom-right-radius: 0 !important;
+}
+
+.es-option.es-highlight {
+  background-color: $color-primary;
+}

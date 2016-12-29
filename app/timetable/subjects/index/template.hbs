@@ -1,11 +1,22 @@
-{{#if model}}
-  {{#sx-list}}
-    {{#each model as |semester|}}
-      {{#sx-list-item}}
-        {{semester.name}}
-      {{/sx-list-item}}
-    {{/each}}
-  {{/sx-list}}
-{{else}}
-  empty state
-{{/if}}
+{{sx-select
+  model       = semesters
+  value       = semester
+  placeholder = (t 'timetable.subjects.selectSemester')
+  labelKey    = 'name'
+  valueKey    = 'id'
+  onSelect    = (action (mut semester))
+}}
+
+<div class="box-list">
+  {{#each model as |subject|}}
+    <div class="box-list-item clickable" {{action (transition-to 'timetable.subjects.edit' subject.id)}}>
+      <div class="box-list-item-title">{{subject.name}}</div>
+      <div class="box-list-item-body">
+        todo
+      </div>
+    </div>
+  {{/each}}
+  <div class="box-list-item box-list-item--new clickable" {{action (transition-to 'timetable.subjects.new')}}>
+    {{sx-icon 'ios-plus-empty'}}
+  </div>
+</div>

@@ -1,10 +1,16 @@
+@import 'normalize';
+@import 'ionicons';
+@import 'ember-power-calendar';
+@import 'ember-basic-dropdown';
+
 @import 'variables';
 @import 'colors';
 @import 'loading';
 @import 'sign';
-@import 'ionicons';
+@import 'box-list';
+@import 'datepicker';
+
 @import 'pod-styles';
-@import 'normalize';
 
 * {
   box-sizing: border-box;
@@ -29,20 +35,32 @@ body > .ember-view {
   flex-grow: 1;
 }
 
-body > .ember-view > .liquid-container
+body > .ember-view > .liquid-container > .liquid-child {
+  overflow: hidden;
+}
 
-.main-content {
+body > .ember-view > .liquid-container .main-content {
+  display: flex;
   height: 100%;
   overflow-x: hidden;
   overflow-y: auto;
+  margin-bottom: $sx-navigation-height;
 }
 
-.has-toolbar .main-content {
-  padding-top: 60px;
+body.has-toolbar > .ember-view > .liquid-container .main-content {
+  margin-top: $sx-toolbar-height;
 }
 
-.has-toolbar.has-tabs .main-content {
-  padding-top: 100px;
+body.has-tabs > .ember-view > .liquid-container .main-content {
+  margin-top: $sx-tabs-height;
+}
+
+body.has-toolbar.has-tabs > .ember-view > .liquid-container .main-content {
+  margin-top: $sx-toolbar-height + $sx-tabs-height;
+}
+
+.clickable {
+  cursor: pointer;
 }
 
 /* liquid fire fix */

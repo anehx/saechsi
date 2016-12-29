@@ -1,21 +1,20 @@
 import Mixin from 'ember-metal/mixin'
+import $     from 'jquery'
 
 export default Mixin.create({
   actions: {
     loading(transition, originRoute) {
-      let controller = this.controllerFor(this.get('routeName'))
-      controller.set('loading', true)
+      $('body').addClass('loading')
 
       if (transition) {
         transition.promise.finally(() => {
-          this.send('finished')
+          $('body').removeClass('loading')
         })
       }
     },
 
     finished() {
-      let controller = this.controllerFor(this.get('routeName'))
-      controller.set('loading', false)
+      $('body').removeClass('loading')
     }
   }
 })

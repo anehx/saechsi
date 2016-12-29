@@ -1,7 +1,6 @@
-import Route             from 'ember-route'
-import LoadingRouteMixin from 'saechsi/mixins/loading-route'
+import Route from 'ember-route'
 
-export default Route.extend(LoadingRouteMixin, {
+export default Route.extend({
   beforeModel() {
     if (this.get('session.isAuthenticated')) {
       this.replaceWith('trends')

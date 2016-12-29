@@ -1,0 +1,73 @@
+& {
+  display: flex;
+  justify-content: center;
+}
+
+.ember-power-calendar {
+  @include ember-power-calendar($cell-size: 45px);
+}
+
+.ember-power-calendar-day--interactive {
+  cursor: pointer;
+  padding: 0 !important;
+}
+
+.ember-power-calendar-day--current-month {
+  background-color: $color-secondary;
+  transition: background-color 300ms ease, color 300ms ease;
+  color: $color-font;
+
+  &:hover {
+    background-color: darken($color-secondary, 5%);
+  }
+}
+
+.ember-power-calendar-day--other-month {
+  background-color: $color-bg;
+  color: darken($color-font, 10%);
+
+  &:hover {
+    background-color: $color-bg;
+    color: $color-font;
+  }
+}
+
+.ember-power-calendar-day--selected {
+  border: none;
+  background-color: $color-primary;
+  color: $color-secondary;
+
+  &:hover {
+    background-color: $color-primary;
+    color: $color-secondary;
+  }
+}
+
+.ember-power-calendar-day--focused {
+  box-shadow: none;
+}
+
+.ember-power-calendar-weekday {
+  color: $color-font;
+}
+
+.ember-power-calendar-nav-control {
+  color: transparent;
+  padding: 0;
+  cursor: pointer;
+  font-size: 16px !important;
+  font-weight: normal !important;
+
+  &::before {
+    color: $color-primary;
+    font-family: 'Ionicons';
+  }
+}
+
+.ember-power-calendar-nav-control--next::before {
+  content: '\f3d3'
+}
+
+.ember-power-calendar-nav-control--previous::before {
+  content: '\f3d2'
+}

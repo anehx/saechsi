@@ -1,8 +1,9 @@
 & {
   position: fixed;
-  top: 60px;
+  top: $sx-toolbar-height;
   left: 0;
   right: 0;
+  z-index: 9000;
 }
 
 ul {
@@ -10,4 +11,5 @@ ul {
   list-style: none;
   margin: 0;
   padding: 0;
+  background-color: $color-secondary;
 }

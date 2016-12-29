@@ -1,3 +1,13 @@
-<h1>
+<div class="sx-toolbar-back">
+  {{#if on-back}}
+    <span {{action on-back on='click'}}>{{sx-icon 'ios-arrow-left'}}{{t 'back'}}</span>
+  {{/if}}
+</div>
+<div class="sx-toolbar-title">
   {{title}}
-</h1>
+</div>
+<div class="sx-toolbar-delete">
+  {{#if on-delete}}
+    <span {{action on-delete on='click'}}>{{sx-icon 'ios-trash-outline'}}</span>
+  {{/if}}
+</div>

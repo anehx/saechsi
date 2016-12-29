@@ -1,16 +1,13 @@
-{{#if loading}}
-  {{#ember-wormhole to='loading'}}
-    <div class="loader"></div>
-  {{/ember-wormhole}}
-{{/if}}
+{{outlet 'toolbar'}}
+{{outlet 'tabs'}}
 
 <main class="main-content">
   {{liquid-outlet}}
 </main>
 
 {{#sx-navigation}}
-  {{sx-navigation-item link='trends' icon=''}}
-  {{sx-navigation-item link='timetable' icon=''}}
-  {{sx-navigation-item link='performance' icon=''}}
-  {{sx-navigation-item link='settings' icon=''}}
+  {{sx-navigation-item link='trends'      title=(t 'trends.title')      icon='ios-home-outline'}}
+  {{sx-navigation-item link='timetable'   title=(t 'timetable.title')   icon='ios-calendar-outline'}}
+  {{sx-navigation-item link='performance' title=(t 'performance.title') icon='ios-checkmark-outline'}}
+  {{sx-navigation-item link='settings'    title=(t 'settings.title')    icon='ios-gear-outline'}}
 {{/sx-navigation}}

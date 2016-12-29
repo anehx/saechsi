@@ -1,0 +1,7 @@
+<form {{action 'save' on='submit'}}>
+  {{sx-input placeholder=(t 'timetable.semesters.name') value=model.name}}
+  {{sx-datepicker placeholder=(t 'timetable.semesters.from') selected=model.from on-select=(action (mut model.from))}}
+  {{sx-datepicker placeholder=(t 'timetable.semesters.to')   selected=model.to   on-select=(action (mut model.to))}}
+
+  <button>Save</button>
+</form>

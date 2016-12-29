@@ -1,5 +1,10 @@
-#loading {
+body.loading .loader-container {
+  display: block;
+}
+
+.loader-container {
   position: fixed;
+  display: none;
   top: 0;
   left: 0;
   right: 0;

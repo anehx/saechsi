@@ -7,7 +7,7 @@ module.exports = function(environment) {
     environment,
 
     modulePrefix: 'saechsi',
-    rootURL: '/',
+    rootURL: '',
     locationType: 'hash',
 
     firebase: {
@@ -23,7 +23,7 @@ module.exports = function(environment) {
     },
 
     i18n: {
-      defaultLocale: 'en-us'
+      defaultLocale: 'de-ch'
     },
 
     webFontConfig: {

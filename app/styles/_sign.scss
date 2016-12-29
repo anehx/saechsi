@@ -71,13 +71,20 @@
   margin: 1rem 0;
 
   input {
-    background-color: transparent;
+    font-family: inherit;
+    font-size: inherit;
+    background-color: $color-bg;
     border: none;
     border-bottom: 1px solid $color-font;
     width: 100%;
     padding: 1rem 0;
     text-align: center;
     color: $color-font;
+
+    &:-webkit-autofill {
+      box-shadow: 0 0 0px 1000px $color-bg inset;
+      -webkit-text-fill-color: $color-font !important;
+    }
   }
 
   i {

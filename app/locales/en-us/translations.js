@@ -5,7 +5,8 @@ export default {
 
   sign: {
     in: 'Sign in',
-    up: 'Sign up'
+    up: 'Sign up',
+    out: 'Sign out'
   },
 
   trends: {

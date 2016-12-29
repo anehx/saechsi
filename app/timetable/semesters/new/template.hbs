@@ -3,5 +3,5 @@
   {{sx-datepicker placeholder=(t 'timetable.semesters.from') selected=model.from on-select=(action (mut model.from))}}
   {{sx-datepicker placeholder=(t 'timetable.semesters.to')   selected=model.to   on-select=(action (mut model.to))}}
 
-  <button>Save</button>
+  {{#sx-button type='submit'}}{{t 'save'}}{{/sx-button}}
 </form>

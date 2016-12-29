@@ -7,8 +7,20 @@ export default Route.extend(ToolbarRouteMixin, {
   },
 
   actions: {
-    save() {
-      console.log('save')
+    async save() {
+      try {
+        this.send('loading')
+
+        await this.get('currentModel').save()
+
+        this.transitionTo('timetable.semesters.index')
+      }
+      catch (err) {
+        console.log(err)
+      }
+      finally {
+        this.send('finished')
+      }
     }
   }
 })

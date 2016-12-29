@@ -28,5 +28,18 @@ export default Model.extend(Validations, {
     let now = moment()
 
     return now < to && now > from
+  },
+
+  @computed('subjects.[]')
+  average(subjects) {
+    let countable = subjects.filter(s => s.get('average'))
+    let len       = countable.get('length')
+    let sum       = countable.reduce((avg, subject) => {
+      avg += subject.get('average') // eslint-disable-line no-param-reassign
+
+      return avg
+    }, 0)
+
+    return len ? sum / len : 0
   }
 })

@@ -1,7 +1,7 @@
 <form {{action 'save' on='submit'}}>
   {{sx-select
     model       = semesters
-    value       = model.semester
+    value       = (if model.semester model.semester.id null)
     placeholder = (t 'timetable.subjects.selectSemester')
     labelKey    = 'name'
     valueKey    = 'id'
@@ -10,5 +10,5 @@
 
   {{sx-input value=model.name placeholder=(t 'timetable.subjects.enterName')}}
 
-  <button type="submit">Save</button>
+  {{#sx-button type='submit'}}{{t 'save'}}{{/sx-button}}
 </form>

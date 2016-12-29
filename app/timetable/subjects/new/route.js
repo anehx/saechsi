@@ -7,7 +7,12 @@ export default Route.extend(ToolbarRouteMixin, {
   },
 
   model() {
-    return this.store.createRecord('subject')
+    let semester = this.store.peekRecord(
+      'semester',
+      this.controllerFor('timetable.subjects.index').get('semester')
+    )
+
+    return this.store.createRecord('subject', { semester })
   },
 
   setupController(controller) {
@@ -21,9 +26,11 @@ export default Route.extend(ToolbarRouteMixin, {
       try {
         this.send('loading')
 
+        let semester = this.get('currentModel.semester.id') || null
+
         await this.get('currentModel').save()
 
-        this.transitionTo('timetable.subjects', { queryParams: { semester: this.get('currentModel.semester.id') } })
+        this.transitionTo('timetable.subjects', { queryParams: { semester } })
       }
       catch (e) {
         console.log(e)

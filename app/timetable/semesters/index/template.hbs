@@ -3,6 +3,7 @@
   <div class="box-list-item clickable" {{action (transition-to 'timetable.semesters.edit' semester.id)}}>
       <div class="box-list-item-title">{{semester.name}}</div>
       <div class="box-list-item-body">
+        {{sx-grade semester.average}}
         <em>{{moment-format semester.from 'DD.MM.YYYY'}} - {{moment-format semester.to 'DD.MM.YYYY'}}</em>
       </div>
     </div>
@@ -18,6 +19,7 @@
     <div class="box-list-item clickable" {{action (transition-to 'timetable.semesters.edit' semester.id)}}>
         <div class="box-list-item-title">{{semester.name}}</div>
         <div class="box-list-item-body">
+          {{sx-grade semester.average}}
           <em>{{moment-format semester.from 'DD.MM.YYYY'}} - {{moment-format semester.to 'DD.MM.YYYY'}}</em>
         </div>
       </div>

@@ -12,7 +12,8 @@
     <div class="box-list-item clickable" {{action (transition-to 'timetable.subjects.edit' subject.id)}}>
       <div class="box-list-item-title">{{subject.name}}</div>
       <div class="box-list-item-body">
-        todo
+        {{sx-grade subject.average}}
+        <em>{{subject.semester.name}}</em>
       </div>
     </div>
   {{/each}}

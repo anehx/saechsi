@@ -21,7 +21,7 @@ export default {
       new: 'New semester',
       from: 'Enter start date...',
       to: 'Enter end date...',
-      name: 'Enter Name...'
+      name: 'Enter name...'
     },
 
     subjects: {
@@ -48,5 +48,12 @@ export default {
 
   settings: {
     title: 'Settings'
+  },
+
+  comments: {
+    neutral: '',
+    bad: 'Ooops.',
+    ok: 'Not bad...',
+    good: 'Nice!'
   }
 }

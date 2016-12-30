@@ -5,6 +5,7 @@ import LoadingRouteMixin from 'saechsi/mixins/loading-route'
 export default Route.extend(LoadingRouteMixin, {
   i18n: service('i18n'),
   locale: service('locale'),
+  splash: service('device/splashscreen'),
 
   async beforeModel() {
     if (!localStorage.getItem('locale')) {
@@ -20,5 +21,9 @@ export default Route.extend(LoadingRouteMixin, {
     catch (e) {
       return
     }
+  },
+
+  afterModel() {
+    this.get('splash').hide()
   }
 })

@@ -1,30 +1,50 @@
-<?xml version='1.0' encoding='utf-8'?>
-<widget id="ch.jonasmetzener.saechsi" version="1.0.5" xmlns="http://www.w3.org/ns/widgets" xmlns:cdv="http://cordova.apache.org/ns/1.0">
-    <name>saechsi</name>
-    <description>
+<?xml version="1.0" encoding="UTF-8" standalone="yes"?>
+<widget id="ch.jonasmetzener.saechsi" version="1.0.6" xmlns="http://www.w3.org/ns/widgets" xmlns:cdv="http://cordova.apache.org/ns/1.0">
+  <name>saechsi</name>
+  <description>
     </description>
-    <content src="index.html" />
-    <plugin name="cordova-plugin-whitelist" spec="1" />
-    <access origin="*" />
-    <allow-intent href="http://*/*" />
-    <allow-intent href="https://*/*" />
-    <allow-intent href="tel:*" />
-    <allow-intent href="sms:*" />
-    <allow-intent href="mailto:*" />
-    <allow-intent href="geo:*" />
-    <platform name="android">
-        <allow-intent href="market:*" />
-    </platform>
-    <platform name="ios">
-        <allow-intent href="itms:*" />
-        <allow-intent href="itms-apps:*" />
-    </platform>
-    <engine name="android" spec="~6.0.0" />
-    <plugin name="cordova-plugin-crosswalk-webview" spec="~2.2.0">
-        <variable name="XWALK_VERSION" value="22+" />
-        <variable name="XWALK_LITEVERSION" value="xwalk_core_library_canary:17+" />
-        <variable name="XWALK_COMMANDLINE" value="--disable-pull-to-refresh-effect" />
-        <variable name="XWALK_MODE" value="embedded" />
-        <variable name="XWALK_MULTIPLEAPK" value="true" />
-    </plugin>
+  <content src="index.html"/>
+  <plugin name="cordova-plugin-whitelist" spec="1"/>
+  <plugin name="cordova-plugin-crosswalk-webview" spec="~2.2.0">
+    <variable name="XWALK_VERSION" value="22+"/>
+    <variable name="XWALK_LITEVERSION" value="xwalk_core_library_canary:17+"/>
+    <variable name="XWALK_COMMANDLINE" value="--disable-pull-to-refresh-effect"/>
+    <variable name="XWALK_MODE" value="embedded"/>
+    <variable name="XWALK_MULTIPLEAPK" value="true"/>
+  </plugin>
+  <access origin="*"/>
+  <allow-intent href="http://*/*"/>
+  <allow-intent href="https://*/*"/>
+  <allow-intent href="tel:*"/>
+  <allow-intent href="sms:*"/>
+  <allow-intent href="mailto:*"/>
+  <allow-intent href="geo:*"/>
+  <preference name="AutoHideSplashScreen" value="false"/>
+  <preference name="AutoHideSplashScreen" value="false"/>
+  <platform name="ios">
+    <allow-intent href="itms:*"/>
+    <allow-intent href="itms-apps:*"/>
+  </platform>
+  <platform name="android">
+    <allow-intent href="market:*"/>
+    <splash src="res/screen/android/port-ldpi.png" density="port-ldpi"/>
+    <splash src="res/screen/android/land-ldpi.png" density="land-ldpi"/>
+    <splash src="res/screen/android/port-mdpi.png" density="port-mdpi"/>
+    <splash src="res/screen/android/land-mdpi.png" density="land-mdpi"/>
+    <splash src="res/screen/android/port-hdpi.png" density="port-hdpi"/>
+    <splash src="res/screen/android/land-hdpi.png" density="land-hdpi"/>
+    <splash src="res/screen/android/port-xhdpi.png" density="port-xhdpi"/>
+    <splash src="res/screen/android/land-xhdpi.png" density="land-xhdpi"/>
+    <splash src="res/screen/android/port-xxhdpi.png" density="port-xxhdpi"/>
+    <splash src="res/screen/android/land-xxhdpi.png" density="land-xxhdpi"/>
+    <splash src="res/screen/android/port-xxxhdpi.png" density="port-xxxhdpi"/>
+    <splash src="res/screen/android/land-xxxhdpi.png" density="land-xxxhdpi"/>
+    <icon src="res/icon/android/ldpi.png" density="ldpi"/>
+    <icon src="res/icon/android/mdpi.png" density="mdpi"/>
+    <icon src="res/icon/android/hdpi.png" density="hdpi"/>
+    <icon src="res/icon/android/xhdpi.png" density="xhdpi"/>
+    <icon src="res/icon/android/xxhdpi.png" density="xxhdpi"/>
+    <icon src="res/icon/android/xxxhdpi.png" density="xxxhdpi"/>
+  </platform>
+  <engine name="android" spec="~6.0.0"/>
 </widget>

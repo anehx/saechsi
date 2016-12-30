@@ -1,0 +1,93 @@
+<?xml version="1.0" encoding="UTF-8" standalone="no"?>
+<svg
+   xmlns:dc="http://purl.org/dc/elements/1.1/"
+   xmlns:cc="http://creativecommons.org/ns#"
+   xmlns:rdf="http://www.w3.org/1999/02/22-rdf-syntax-ns#"
+   xmlns:svg="http://www.w3.org/2000/svg"
+   xmlns="http://www.w3.org/2000/svg"
+   xmlns:sodipodi="http://sodipodi.sourceforge.net/DTD/sodipodi-0.dtd"
+   xmlns:inkscape="http://www.inkscape.org/namespaces/inkscape"
+   width="2732px"
+   height="2732px"
+   viewBox="0 0 2732 2732"
+   version="1.1"
+   id="svg2"
+   inkscape:version="0.91 r13725"
+   sodipodi:docname="splash.svg">
+  <metadata
+     id="metadata81">
+    <rdf:RDF>
+      <cc:Work
+         rdf:about="">
+        <dc:format>image/svg+xml</dc:format>
+        <dc:type
+           rdf:resource="http://purl.org/dc/dcmitype/StillImage" />
+        <dc:title>safe-area</dc:title>
+      </cc:Work>
+    </rdf:RDF>
+  </metadata>
+  <sodipodi:namedview
+     pagecolor="#ffffff"
+     bordercolor="#666666"
+     borderopacity="1"
+     objecttolerance="10"
+     gridtolerance="10"
+     guidetolerance="10"
+     inkscape:pageopacity="0"
+     inkscape:pageshadow="2"
+     inkscape:window-width="1918"
+     inkscape:window-height="1182"
+     id="namedview79"
+     showgrid="false"
+     inkscape:zoom="0.24432972"
+     inkscape:cx="1355.6703"
+     inkscape:cy="1497.2708"
+     inkscape:window-x="3520"
+     inkscape:window-y="16"
+     inkscape:window-maximized="0"
+     inkscape:current-layer="svg2" />
+  <!-- Generator: Sketch 40.1 (33804) - http://www.bohemiancoding.com/sketch -->
+  <title
+     id="title4">safe-area</title>
+  <desc
+     id="desc6">Created with Sketch.</desc>
+  <defs
+     id="defs8">
+    <radialGradient
+       cx="50%"
+       cy="50%"
+       fx="50%"
+       fy="50%"
+       r="67.646262%"
+       id="radialGradient-1">
+      <stop
+         stop-color="#AA076B"
+         offset="0%"
+         id="stop11" />
+      <stop
+         stop-color="#61045F"
+         offset="100%"
+         id="stop13" />
+    </radialGradient>
+  </defs>
+  <g
+     id="Page-1"
+     stroke="none"
+     stroke-width="1"
+     fill="none"
+     fill-rule="evenodd">
+    <rect
+       id="Background"
+       fill="url(#radialGradient-1)"
+       x="0"
+       y="0"
+       width="2732"
+       height="2732"
+       style="fill:#282828;fill-opacity:1" />
+  </g>
+  <path
+     id="path4323"
+     d="m 1280.718,1326.482 -29.118,29.118 93.6,93.6 208,-208 -29.118,-29.118 -178.882,177.836 -64.482,-63.436 z M 1532.4,1366 c 0,91.518 -74.883,166.4 -166.4,166.4 -91.517,0 -166.4,-74.882 -166.4,-166.4 0,-91.518 74.882,-166.4 166.4,-166.4 15.6,0 31.2,2.082 45.764,6.241 L 1444,1173.6 c -23.918,-10.4 -49.918,-15.6 -78,-15.6 -114.4,0 -208,93.6 -208,208 0,114.4 93.6,208 208,208 114.4,0 208,-93.6 208,-208 l -41.6,0 z"
+     inkscape:connector-curvature="0"
+     style="fill:#a8a8a8;fill-opacity:1" />
+</svg>

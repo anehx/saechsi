@@ -1,0 +1,38 @@
+<form {{action 'save' on='submit'}}>
+  {{#if step1}}
+    <div class="box-list">
+      {{#each semesters as |sem|}}
+        <div class="box-list-item clickable" {{action 'setSemester' sem}}>
+          <div class="box-list-item-title">{{sem.name}}</div>
+          <div class="box-list-item-body">
+            {{sx-grade (await sem.average)}}
+            <em>{{moment-format sem.from 'DD.MM.YYYY'}} - {{moment-format sem.to 'DD.MM.YYYY'}}</em>
+          </div>
+        </div>
+      {{/each}}
+    </div>
+  {{/if}}
+  {{#if step2}}
+    <div class="box-list">
+      <div class="box-list-item clickable" {{action 'setSubject' null}}>
+        <div class="box-list-item-title">{{t 'performance.goals.noSubject'}}</div>
+        <div class="box-list-item-body">
+          <em>{{t 'performance.goals.noSubjectDesc'}}</em>
+        </div>
+      </div>
+      {{#each subjects as |sub|}}
+        <div class="box-list-item clickable" {{action 'setSubject' sub}}>
+          <div class="box-list-item-title">{{sub.name}}</div>
+          <div class="box-list-item-body">
+            {{sx-grade (await sub.average)}}
+            <em>{{await sub.semester.name}}</em>
+          </div>
+        </div>
+      {{/each}}
+    </div>
+  {{/if}}
+  {{#if step3}}
+    {{sx-grade-input value=model.score}}
+    {{#sx-button type='submit'}}{{t 'save'}}{{/sx-button}}
+  {{/if}}
+</form>

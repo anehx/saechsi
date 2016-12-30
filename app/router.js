@@ -16,7 +16,7 @@ AppRouter.map(function() {
   })
 
   this.route('protected', { path: '/' }, function() {
-    this.route('trends', { path: '/', resetNamespace })
+    this.route('home', { path: '/', resetNamespace })
 
     this.route('performance', { resetNamespace }, function() {
       this.route('grades', function() {

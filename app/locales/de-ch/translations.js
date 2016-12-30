@@ -9,8 +9,8 @@ export default {
     out: 'Uslogge'
   },
 
-  trends: {
-    title: 'Trends'
+  home: {
+    title: 'Home'
   },
 
   timetable: {
@@ -39,11 +39,25 @@ export default {
     title: 'Leistige',
 
     grades: {
-      title: 'Note'
+      title: 'Note',
+      edit: 'Note bearbeite',
+      new: 'Nöii Note'
     },
 
     goals: {
-      title: 'Ziu'
+      title: 'Ziu',
+      edit: 'Ziu bearbeite',
+      new: 'Nöis Ziu',
+
+      goal: 'Ziu',
+      reached: 'Erreicht',
+
+      detail: {
+        need: 'Du bruchsch es {{needed}} um dis Ziu z\'erreiche.',
+        notPossible: 'Das geit leider gar nid..',
+        goodLuck: 'Viu Glück!',
+        reached: 'Du hesch dis Ziu erreicht. Bündig!'
+      }
     }
   },
 

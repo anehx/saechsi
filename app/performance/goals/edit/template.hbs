@@ -1,0 +1,18 @@
+<form {{action 'save' on='submit'}}>
+  <div class="goal-detail">
+    <h1>{{model.name}}</h1>
+    {{#if model.subject}}
+      <p>
+        {{#if (eq (goalState model.score model.reached) 'reached')}}
+          {{t 'performance.goals.detail.reached'}}
+        {{else}}
+          {{t 'performance.goals.detail.need' needed=(await model.needed)}}<br>
+          {{t (concat 'performance.goals.detail.' (if (gt (await model.needed) 6) 'notPossible' 'goodLuck'))}}
+        {{/if}}
+      </p>
+    {{/if}}
+  </div>
+  {{sx-grade-input value=model.score}}
+
+  {{#sx-button type='submit'}}{{t 'save'}}{{/sx-button}}
+</form>

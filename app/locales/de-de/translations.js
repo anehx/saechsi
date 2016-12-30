@@ -9,8 +9,8 @@ export default {
     out: 'Ausloggen'
   },
 
-  trends: {
-    title: 'Trends'
+  home: {
+    title: 'Home'
   },
 
   timetable: {
@@ -39,11 +39,25 @@ export default {
     title: 'Leistungen',
 
     grades: {
-      title: 'Noten'
+      title: 'Noten',
+      edit: 'Note bearbeiten',
+      new: 'Neue Note'
     },
 
     goals: {
-      title: 'Ziele'
+      title: 'Ziele',
+      edit: 'Ziel bearbeiten',
+      new: 'Neues Ziel',
+
+      goal: 'Ziel',
+      reached: 'Erreicht',
+
+      detail: {
+        need: 'Du brauchst eine {{needed}} um dein Ziel zu erreichen.',
+        notPossible: 'Das ist leider nicht möglich..',
+        goodLuck: 'Viel Glück!',
+        reached: 'Du hast dein Ziel erreicht. Glückwunsch!'
+      }
     }
   },
 

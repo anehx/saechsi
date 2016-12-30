@@ -24,13 +24,18 @@
 .grade-list-item-comment,
 .grade-list-item-description {
   flex: 0 0 40%;
+  display: flex;
 }
 
 .grade-list-item-grade {
   flex: 1 0 20%;
+  justify-content: center;
+  display: flex;
 }
 
 .grade-list-item-description {
+  flex-direction: column;
+
   strong {
     display: block;
     margin-bottom: 5px;
@@ -49,6 +54,15 @@
 }
 
 .grade-list-item--new {
+  .grade-list-item-description,
+  .grade-list-item-comment {
+    display: none;
+  }
+
+  .grade-list-item-grade {
+    flex: 1 0 100%;
+  }
+
   span {
     width:  60px;
     height: 60px;

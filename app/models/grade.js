@@ -20,5 +20,25 @@ const Validations = buildValidations({
 export default Model.extend(ValidatedModelMixin, Validations, {
   score:   attr('number', { defaultValue: 4.5 }),
   date:    attr('moment'),
-  subject: belongsTo('subject')
+  subject: belongsTo('subject'),
+
+  async save() {
+    await this._super(...arguments)
+
+    let subject = await this.store.findRecord('subject', this.get('subject.id'))
+
+    subject.get('grades').addObject(this)
+
+    await subject.save()
+  },
+
+  async cleanDelete() {
+    let subject = await this.store.findRecord('subject', this.get('subject.id'))
+
+    subject.get('grades').removeObject(this)
+
+    await subject.save()
+
+    await this.destroyRecord()
+  }
 })

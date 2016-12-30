@@ -42,7 +42,7 @@ export default Route.extend(ToolbarRouteMixin, RollbackRouteMixin, {
 
         let semester = this.get('currentModel.semester.id')
 
-        await this.get('currentModel').destroyRecord()
+        await this.get('currentModel').cleanDelete()
 
         this.transitionTo('timetable.subjects', { queryParams: { semester } })
       }

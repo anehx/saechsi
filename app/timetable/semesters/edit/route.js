@@ -28,7 +28,7 @@ export default Route.extend(ToolbarRouteMixin, RollbackRouteMixin, {
       try {
         this.send('loading')
 
-        await this.get('currentModel').destroyRecord()
+        await this.get('currentModel').cleanDelete()
 
         this.transitionTo('timetable.semesters.index')
       }

@@ -9,8 +9,8 @@ export default {
     out: 'Sign out'
   },
 
-  trends: {
-    title: 'Trends'
+  home: {
+    title: 'Home'
   },
 
   timetable: {
@@ -47,7 +47,17 @@ export default {
     goals: {
       title: 'Goals',
       edit: 'Edit goal',
-      new: 'New goal'
+      new: 'New goal',
+
+      goal: 'Goal',
+      reached: 'Reached',
+
+      detail: {
+        need: 'You need a {{needed}} to reach your goal.',
+        notPossible: 'That\'s not possible..',
+        goodLuck: 'Good luck!',
+        reached: 'You reached your goal. Congratulations!'
+      }
     }
   },
 

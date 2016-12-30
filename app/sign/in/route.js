@@ -19,7 +19,7 @@ export default Route.extend({
 
         await this.get('session').open('firebase', { provider, email, password })
 
-        this.transitionTo('trends')
+        this.transitionTo('home')
       }
       catch (e) {
         this.set('controller.error', e.message)

@@ -9,6 +9,8 @@
 @import 'sign';
 @import 'box-list';
 @import 'grade-list';
+@import 'goal-list';
+@import 'goal-detail';
 @import 'datepicker';
 
 @import 'pod-styles';
@@ -41,46 +43,30 @@ body > .ember-view {
   flex-grow: 1;
 }
 
-body > .ember-view > .liquid-container > .liquid-child {
+body > .ember-view > .ember-view {
   overflow: hidden;
 }
 
-body > .ember-view > .liquid-container .main-content {
-  display: flex;
+body .main-content {
   height: 100%;
+  width: 100%;
   overflow-x: hidden;
   overflow-y: auto;
-  margin-bottom: $sx-navigation-height;
+  padding-bottom: $sx-navigation-height;
 }
 
-body.has-toolbar > .ember-view > .liquid-container .main-content {
-  margin-top: $sx-toolbar-height;
+body.has-toolbar .main-content {
+  padding-top: $sx-toolbar-height;
 }
 
-body.has-tabs > .ember-view > .liquid-container .main-content {
-  margin-top: $sx-tabs-height;
+body.has-tabs .main-content {
+  padding-top: $sx-tabs-height;
 }
 
-body.has-toolbar.has-tabs > .ember-view > .liquid-container .main-content {
-  margin-top: $sx-toolbar-height + $sx-tabs-height;
+body.has-toolbar.has-tabs .main-content {
+  padding-top: $sx-toolbar-height + $sx-tabs-height;
 }
 
 .clickable {
   cursor: pointer;
-}
-
-/* liquid fire fix */
-.liquid-container, .liquid-child {
-  overflow: visible;
-}
-
-.liquid-container.liquid-animating,
-.liquid-container.liquid-animating .liquid-child {
-  overflow: hidden;
-}
-
-.liquid-container, .liquid-child {
-  display: flex;
-  flex-grow: 1;
-  flex-direction: column;
 }

@@ -2,11 +2,11 @@
 {{outlet 'tabs'}}
 
 <main class="main-content">
-  {{liquid-outlet}}
+  {{outlet}}
 </main>
 
 {{#sx-navigation}}
-  {{sx-navigation-item link='trends'      title=(t 'trends.title')      icon='ios-home-outline'}}
+  {{sx-navigation-item link='home'        title=(t 'home.title')        icon='ios-home-outline'}}
   {{sx-navigation-item link='timetable'   title=(t 'timetable.title')   icon='ios-calendar-outline'}}
   {{sx-navigation-item link='performance' title=(t 'performance.title') icon='ios-checkmark-outline'}}
   {{sx-navigation-item link='settings'    title=(t 'settings.title')    icon='ios-gear-outline'}}

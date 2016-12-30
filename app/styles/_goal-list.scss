@@ -1,0 +1,84 @@
+.goal-list {
+  display: flex;
+  flex-direction: column;
+}
+
+.goal-list-item--new {
+  .goal-list-item-description {
+    flex: 1 0 100%;
+    justify-content: center;
+    align-items: center;
+
+    span {
+      width:  60px;
+      height: 60px;
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      text-align: center;
+      font-size: 44px;
+      border: 1px solid $color-font;
+      border-radius: 50%;
+    }
+  }
+}
+
+.goal-list-item {
+  display: flex;
+  padding: 1rem;
+  border-bottom: 1px solid $color-font;
+}
+
+.goal-list-item-description,
+.goal-list-item-state {
+  display: flex;
+  justify-content: center;
+  flex-direction: column;
+}
+
+.goal-list-item-description {
+  flex: 1 0 60%;
+
+  strong {
+    display: block;
+    margin-bottom: 5px;
+  }
+  p {
+    margin: 0;
+    font-size: 80%;
+  }
+}
+
+.goal-list-item-state {
+  flex: 0 0 40%;
+  text-align: right;
+  align-items: flex-end;
+
+  i {
+    font-size: 44px;
+  }
+}
+
+.not-reached {
+  border-color: $color-error;
+
+  .goal-list-item-state {
+    color: $color-error;
+  }
+}
+
+.close {
+  border-color: $color-warning;
+
+  .goal-list-item-state {
+    color: $color-warning;
+  }
+}
+
+.reached {
+  border-color: $color-success;
+
+  .goal-list-item-state {
+    color: $color-success;
+  }
+}

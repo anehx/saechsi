@@ -1,9 +1,9 @@
-import Model               from 'ember-data/model'
-import attr                from 'ember-data/attr'
-import moment              from 'moment'
-import computed, {oneWay}            from 'ember-computed-decorators'
-import roundDecimal        from 'saechsi/utils/round'
-import ValidatedModelMixin from 'saechsi/mixins/validated-model'
+import Model                from 'ember-data/model'
+import attr                 from 'ember-data/attr'
+import moment               from 'moment'
+import computed, { oneWay } from 'ember-computed-decorators'
+import roundDecimal         from 'saechsi/utils/round'
+import ValidatedModelMixin  from 'saechsi/mixins/validated-model'
 
 import {
   belongsTo,
@@ -47,5 +47,31 @@ export default Model.extend(ValidatedModelMixin, Validations, {
     let sum      = averages.reduce((s, avg) => s + avg, 0)
 
     return roundDecimal(sum / averages.length) || 0
+  },
+
+  async cleanDelete() {
+    let subjects = await this.store.query('subject', { orderBy: 'semester', equalTo: this.id })
+    let goals    = await this.store.query('goal', { orderBy: 'semester', equalTo: this.id })
+
+    await subjects.forEach(async(subject) => {
+      await subject.destroyRecord()
+
+      let grades   = await this.store.query('grade', { orderBy: 'subject', equalTo: subject.id })
+      let subGoals = await this.store.query('goal', { orderBy: 'subject', equalTo: subject.id })
+
+      await grades.forEach(async(grade) => {
+        await grade.destroyRecord()
+      })
+
+      await subGoals.forEach(async(goal) => {
+        await goal.destroyRecord()
+      })
+    })
+
+    await goals.forEach(async(goal) => {
+      await goal.destroyRecord()
+    })
+
+    await this.destroyRecord()
   }
 })

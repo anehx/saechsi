@@ -1,1 +1,24 @@
-list of goals
+<div class="goal-list">
+  <div class="goal-list-item goal-list-item--new clickable" {{action (transition-to 'performance.goals.new')}}>
+    <div class="goal-list-item-description">
+      <span>
+        {{sx-icon 'ios-plus-empty'}}
+      </span>
+    </div>
+    <div class="goal-list-item-state"></div>
+  </div>
+  {{#each model as |goal|}}
+    {{#unless goal.isDeleted}}
+      <div class="goal-list-item clickable {{goalState goal.score (await goal.reached)}}" {{action (transition-to 'performance.goals.edit' goal.id)}}>
+        <div class="goal-list-item-description">
+          <strong>{{await goal.name}}</strong>
+          <p>{{t 'performance.goals.goal'}}: {{goal.score}}</p>
+          <p>{{t 'performance.goals.reached'}}: {{await goal.reached}}</p>
+        </div>
+        <div class="goal-list-item-state">
+          {{sx-icon (if (eq (goalState goal.score (await goal.reached)) 'reached') 'ios-checkmark-empty' 'ios-close-empty')}}
+        </div>
+      </div>
+    {{/unless}}
+  {{/each}}
+</div>

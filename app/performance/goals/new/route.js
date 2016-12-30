@@ -7,6 +7,19 @@ export default Route.extend(ToolbarRouteMixin, RollbackRouteMixin, {
     return this.store.createRecord('goal')
   },
 
+  resetController(controller, isExiting) {
+    this._super(...arguments)
+
+    if (isExiting) {
+      controller.setProperties({
+        step1: true,
+        step2: false,
+        step3: false,
+        subjects: []
+      })
+    }
+  },
+
   actions: {
     async save() {
       try {

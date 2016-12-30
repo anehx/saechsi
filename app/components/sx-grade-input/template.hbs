@@ -1,9 +1,9 @@
-<div class="sx-grade-input-minus">
-  {{sx-icon 'ios-minus-empty' click=(action 'minus')}}
+<div class="sx-grade-input-minus clickable" {{action 'minus'}}>
+  {{sx-icon 'ios-minus-empty'}}
 </div>
 <div class="sx-grade-input-score">
   {{input type='text' value=parsed readonly=true}}
 </div>
-<div class="sx-grade-input-plus">
-  {{sx-icon 'ios-plus-empty' click=(action 'plus')}}
+<div class="sx-grade-input-plus clickable" {{action 'plus'}}>
+  {{sx-icon 'ios-plus-empty'}}
 </div>

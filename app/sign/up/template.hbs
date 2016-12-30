@@ -1,4 +1,4 @@
-<form {{action 'signIn' on='submit'}}>
+<form {{action 'signUp' on='submit'}}>
   <div class="sign-input">
     {{sx-icon 'email'}}
     {{input autocomplete='off' type='email' value=email}}
@@ -12,5 +12,11 @@
     {{input autocomplete='off' type='password' value=password2}}
   </div>
 
-  <button type="submit" class="sign-button">{{t 'sign.in'}}</button>
+  <button type="submit" class="sign-button {{unless (v-get this 'isValid') 'disabled'}}">{{t 'sign.up'}}</button>
 </form>
+
+{{#if error}}
+  <div class="error">
+    {{t (concat 'error.' error.code)}}
+  </div>
+{{/if}}

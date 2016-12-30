@@ -8,5 +8,11 @@
     {{input autocomplete='off' type='password' value=password}}
   </div>
 
-  <button type="submit" class="sign-button">{{t 'sign.in'}}</button>
+  <button type="submit" class="sign-button {{unless (v-get this 'isValid') 'disabled'}}">{{t 'sign.in'}}</button>
 </form>
+
+{{#if error}}
+  <div class="error">
+    {{t (concat 'error.' error.code)}}
+  </div>
+{{/if}}

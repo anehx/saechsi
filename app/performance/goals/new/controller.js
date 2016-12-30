@@ -1,18 +1,17 @@
 import Controller from 'ember-controller'
+import computed   from 'ember-computed-decorators'
 
 export default Controller.extend({
   step1: true,
   step2: false,
   step3: false,
 
-  semesters: [],
-  subjects: [],
-
-  async init() {
-    this._super(...arguments)
-
-    this.set('semesters', await this.store.findAll('semester'))
+  @computed
+  semesters() {
+    return this.store.findAll('semester')
   },
+
+  subjects: [],
 
   actions: {
     async setSemester(semester) {

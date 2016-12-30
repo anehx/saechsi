@@ -9,20 +9,17 @@ export default Controller.extend({
 
   @computed
   semesters() {
-    return this.store.peekAll('semester').filterBy('active', true)
+    return this.store.findAll('semester')
   },
 
-  @computed
-  subjects() {
-    return this.store.peekAll('subject')
-  },
+  subjects: [],
 
   actions: {
     async setSemester(semester) {
       try {
         this.send('loading')
 
-        await this.store.query('subject', { semester: semester.id })
+        this.set('subjects', await this.store.query('subject', { orderBy: 'semester', equalTo: semester.id }))
 
         this.set('step1', false)
         this.set('step2', true)

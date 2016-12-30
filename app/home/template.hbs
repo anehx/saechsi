@@ -1,5 +1,5 @@
 <div class="box-list">
-  <div class="box-list-item">
+  <div class="box-list-item clickable" {{action (transition-to 'timetable.semesters.index')}}>
     <div class="box-list-item-title">
       {{t 'timetable.semesters.title'}}
     </div>
@@ -7,7 +7,7 @@
       {{sx-icon 'ios-timer-outline'}}
     </div>
   </div>
-  <div class="box-list-item">
+  <div class="box-list-item clickable" {{action (transition-to 'timetable.subjects.index')}}>
     <div class="box-list-item-title">
       {{t 'timetable.subjects.title'}}
     </div>
@@ -15,7 +15,7 @@
       {{sx-icon 'ios-book-outline'}}
     </div>
   </div>
-  <div class="box-list-item">
+  <div class="box-list-item clickable" {{action (transition-to 'performance.grades.index')}}>
     <div class="box-list-item-title">
       {{t 'performance.grades.title'}}
     </div>
@@ -23,7 +23,7 @@
       {{sx-icon 'ios-paper-outline'}}
     </div>
   </div>
-  <div class="box-list-item">
+  <div class="box-list-item clickable" {{action (transition-to 'performance.goals.index')}}>
     <div class="box-list-item-title">
       {{t 'performance.goals.title'}}
     </div>

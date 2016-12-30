@@ -48,23 +48,22 @@ body > .ember-view > .ember-view {
 }
 
 body .main-content {
-  height: 100%;
   width: 100%;
   overflow-x: hidden;
   overflow-y: auto;
-  padding-bottom: $sx-navigation-height;
+  margin-bottom: $sx-navigation-height;
 }
 
 body.has-toolbar .main-content {
-  padding-top: $sx-toolbar-height;
+  margin-top: $sx-toolbar-height;
 }
 
 body.has-tabs .main-content {
-  padding-top: $sx-tabs-height;
+  margin-top: $sx-tabs-height;
 }
 
 body.has-toolbar.has-tabs .main-content {
-  padding-top: $sx-toolbar-height + $sx-tabs-height;
+  margin-top: $sx-toolbar-height + $sx-tabs-height;
 }
 
 .clickable {

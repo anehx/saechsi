@@ -52,6 +52,9 @@ export default {
       goal: 'Goal',
       reached: 'Reached',
 
+      noSubject: 'All subjects',
+      noSubjectDesc: 'The goal shouldn\'t be limited to one subject but count for the whole semester.',
+
       detail: {
         need: 'You need a {{needed}} to reach your goal.',
         notPossible: 'That\'s not possible..',
@@ -70,5 +73,11 @@ export default {
     bad: 'Ooops.',
     ok: 'Not bad...',
     good: 'Nice!'
+  },
+
+  error: {
+    'auth/user-not-found': 'User not found.',
+    'auth/wrong-password': 'Wrong password.',
+    'auth/email-already-in-use': 'This email address is already in use.'
   }
 }

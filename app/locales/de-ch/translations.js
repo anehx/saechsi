@@ -52,6 +52,9 @@ export default {
       goal: 'Ziu',
       reached: 'Erreicht',
 
+      noSubject: 'Aui Fächer',
+      noSubjectDesc: 'Z Ziu söu nid uf nes Fach begränzt si, sondern übers ganze Semester zeuä.',
+
       detail: {
         need: 'Du bruchsch es {{needed}} um dis Ziu z\'erreiche.',
         notPossible: 'Das geit leider gar nid..',
@@ -70,5 +73,11 @@ export default {
     bad: 'Stärneföifi.',
     ok: 'Mues länge...',
     good: 'Wiud!'
+  },
+
+  error: {
+    'auth/user-not-found': 'Dä Benutzer gits nid.',
+    'auth/wrong-password': 'Fausches Passwort.',
+    'auth/email-already-in-use': 'Die Email Adrässe brucht scho öpper.'
   }
 }

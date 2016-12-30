@@ -3,10 +3,6 @@ import ToolbarRouteMixin  from 'saechsi/mixins/toolbar-route'
 import RollbackRouteMixin from 'saechsi/mixins/rollback-route'
 
 export default Route.extend(ToolbarRouteMixin, RollbackRouteMixin, {
-  beforeModel() {
-    return this.store.findAll('semester')
-  },
-
   model() {
     return this.store.createRecord('grade')
   },
@@ -19,7 +15,8 @@ export default Route.extend(ToolbarRouteMixin, RollbackRouteMixin, {
         step1: true,
         step2: false,
         step3: false,
-        step4: false
+        step4: false,
+        subjects: []
       })
     }
   },

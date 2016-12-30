@@ -22,9 +22,7 @@ export default Route.extend({
         this.transitionTo('home')
       }
       catch (e) {
-        this.set('controller.error', e.message)
-        console.log(e)
-        console.log(e.code)
+        this.set('controller.error', e)
       }
       finally {
         this.send('finished')

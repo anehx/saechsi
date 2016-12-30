@@ -1,7 +1,8 @@
-import Route             from 'ember-route'
-import ToolbarRouteMixin from 'saechsi/mixins/toolbar-route'
+import Route              from 'ember-route'
+import ToolbarRouteMixin  from 'saechsi/mixins/toolbar-route'
+import RollbackRouteMixin from 'saechsi/mixins/rollback-route'
 
-export default Route.extend(ToolbarRouteMixin, {
+export default Route.extend(ToolbarRouteMixin, RollbackRouteMixin, {
   beforeModel() {
     return this.store.findAll('semester')
   },

@@ -1,0 +1,63 @@
+.grade-list {
+  display: flex;
+  flex-direction: column;
+}
+
+.grade-list-item {
+  display: flex;
+  border-bottom: 1px solid $color-font;
+  padding: 1rem;
+
+  &.bad {
+    border-color: $color-error;
+  }
+
+  &.ok {
+    border-color: $color-warning;
+  }
+
+  &.good {
+    border-color: $color-success;
+  }
+}
+
+.grade-list-item-comment,
+.grade-list-item-description {
+  flex: 0 0 40%;
+}
+
+.grade-list-item-grade {
+  flex: 1 0 20%;
+}
+
+.grade-list-item-description {
+  strong {
+    display: block;
+    margin-bottom: 5px;
+  }
+  p {
+    margin: 0;
+    font-size: 80%;
+  }
+}
+
+.grade-list-item-comment {
+  text-align: right;
+  display: flex;
+  align-items: center;
+  justify-content: flex-end;
+}
+
+.grade-list-item--new {
+  span {
+    width:  60px;
+    height: 60px;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    text-align: center;
+    font-size: 44px;
+    border: 1px solid $color-font;
+    border-radius: 50%;
+  }
+}

@@ -9,13 +9,15 @@
 
 <div class="box-list">
   {{#each model as |subject|}}
-    <div class="box-list-item clickable" {{action (transition-to 'timetable.subjects.edit' subject.id)}}>
-      <div class="box-list-item-title">{{subject.name}}</div>
-      <div class="box-list-item-body">
-        {{sx-grade subject.average}}
-        <em>{{subject.semester.name}}</em>
+    {{#unless subject.isDeleted}}
+      <div class="box-list-item clickable" {{action (transition-to 'timetable.subjects.edit' subject.id)}}>
+        <div class="box-list-item-title">{{subject.name}}</div>
+        <div class="box-list-item-body">
+          {{sx-grade (await subject.average)}}
+          <em>{{await subject.semester.name}}</em>
+        </div>
       </div>
-    </div>
+    {{/unless}}
   {{/each}}
   <div class="box-list-item box-list-item--new clickable" {{action (transition-to 'timetable.subjects.new')}}>
     {{sx-icon 'ios-plus-empty'}}

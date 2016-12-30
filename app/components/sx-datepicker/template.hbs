@@ -5,6 +5,7 @@
     readonly    = true
     value       = (if selected (moment-format selected 'DD.MM.YYYY'))
     click       = (action dropdown.actions.toggle)
+    valid       = valid
   }}
 
   {{#dropdown.content}}

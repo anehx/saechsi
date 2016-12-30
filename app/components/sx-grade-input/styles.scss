@@ -1,0 +1,64 @@
+& {
+  display: flex;
+  padding: 1rem;
+  border-bottom: 1px solid $color-font;
+}
+
+.sx-grade-input-plus,
+.sx-grade-input-minus,
+.sx-grade-input-score {
+  flex: 1 0 auto;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+}
+
+.sx-grade-input-plus,
+.sx-grade-input-minus {
+  i {
+    font-size: 42px;
+    cursor: pointer;
+  }
+}
+
+.sx-grade-input-score {
+  input {
+    background-color: transparent;
+    appearance: textfield;
+    border-width: 1px;
+    border-style: solid;
+    border-color: $color-font;
+    border-radius: 50%;
+    width: 60px;
+    height: 60px;
+    display: flex;
+    padding: 0;
+    margin: 0;
+    color: $color-font;
+    font-family: inherit;
+    font-size: 20px;
+    text-align: center;
+    align-items: center;
+    justify-content: center;
+
+    &::-webkit-outer-spin-button,
+    &::-webkit-inner-spin-button {
+      appearance: none;
+    }
+  }
+}
+
+&.bad .sx-grade-input-score input {
+  border-color: $color-error;
+  color:        $color-error;
+}
+
+&.ok .sx-grade-input-score input {
+  border-color: $color-warning;
+  color:        $color-warning;
+}
+
+&.good .sx-grade-input-score input {
+  border-color: $color-success;
+  color:        $color-success;
+}

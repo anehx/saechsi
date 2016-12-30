@@ -11,7 +11,7 @@ export default Service.extend({
 
     localStorage.setItem('locale', locale)
     this.get('i18n').set('locale', locale)
-    moment.lang(lang)
+    moment.locale(locale)
     $('html').attr('lang', lang)
   }
 })

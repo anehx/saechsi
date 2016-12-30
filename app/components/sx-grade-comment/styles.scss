@@ -1,0 +1,15 @@
+&.neutral {
+  color: $color-font;
+}
+
+&.bad {
+  color: $color-error;
+}
+
+&.ok {
+  color: $color-warning;
+}
+
+&.good{
+  color: $color-success;
+}

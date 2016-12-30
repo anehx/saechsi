@@ -1,0 +1,8 @@
+<form {{action 'save' on='submit'}}>
+  {{sx-input readonly=true value=(await model.subject.semester.name)}}
+  {{sx-input readonly=true value=(await model.subject.name)}}
+  {{sx-datepicker placeholder=(t 'performance.subjects.date') valid=(v-get model 'date' 'isValid') selected=model.date on-select=(action (mut model.date))}}
+  {{sx-grade-input value=model.score}}
+
+  {{#sx-button type='submit' enabled=(v-get model 'isValid')}}{{t 'save'}}{{/sx-button}}
+</form>

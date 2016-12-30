@@ -5,7 +5,9 @@ export default Component.extend({
   type: 'button',
 
   attributeBindings: [ 'type' ],
-  classNameBindings: [ 'primary', 'error', 'warning', 'success' ],
+  classNameBindings: [ 'primary', 'error', 'warning', 'success', 'enabled::disabled' ],
+
+  enabled: true,
 
   primary: false,
   error: false,

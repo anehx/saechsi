@@ -1,6 +1,7 @@
-import Model         from 'ember-data/model'
-import attr          from 'ember-data/attr'
-import { belongsTo } from 'ember-data/relationships'
+import Model               from 'ember-data/model'
+import attr                from 'ember-data/attr'
+import { belongsTo }       from 'ember-data/relationships'
+import ValidatedModelMixin from 'saechsi/mixins/validated-model'
 
 import {
   validator,
@@ -12,11 +13,12 @@ const Validations = buildValidations({
     validator('presence', true),
     validator('number', { gt: 1, lte: 6 })
   ],
-  subject: validator('presence', true)
+  subject: validator('presence', true),
+  date: validator('date', { precision: 'day' })
 })
 
-export default Model.extend(Validations, {
-  score:   attr('number'),
-  date:    attr('date'),
+export default Model.extend(ValidatedModelMixin, Validations, {
+  score:   attr('number', { defaultValue: 4.5 }),
+  date:    attr('moment'),
   subject: belongsTo('subject')
 })

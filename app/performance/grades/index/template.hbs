@@ -1,1 +1,28 @@
-list of grades
+<div class="grade-list">
+  <div class="grade-list-item grade-list-item--new clickable" {{action (transition-to 'performance.grades.new')}}>
+    <div class="grade-list-item-description"></div>
+    <div class="grade-list-item-grade">
+      <span>
+        {{sx-icon 'ios-plus-empty'}}
+      </span>
+    </div>
+    <div class="grade-list-item-comment"></div>
+  </div>
+  {{#each model as |grade|}}
+    {{#unless grade.isDeleted}}
+      <div class="grade-list-item {{gradeState grade.score}} clickable" {{action (transition-to 'performance.grades.edit' grade.id)}}>
+        <div class="grade-list-item-description">
+          <strong>{{await grade.subject.name}}</strong>
+          <p>{{await grade.subject.semester.name}}</p>
+          <p>{{moment-format grade.date 'DD.MM.YYYY'}}</p>
+        </div>
+        <div class="grade-list-item-grade">
+          {{sx-grade grade.score}}
+        </div>
+        <div class="grade-list-item-comment">
+          {{sx-grade-comment grade.score}}
+        </div>
+      </div>
+    {{/unless}}
+  {{/each}}
+</div>

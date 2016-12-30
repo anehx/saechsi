@@ -17,6 +17,11 @@
     background-color: $color-secondary;
   }
 
+  &.disabled {
+    color: darken($color-font, 25%);
+    pointer-events: none;
+  }
+
   &.primary {
     color: $color-primary;
   }

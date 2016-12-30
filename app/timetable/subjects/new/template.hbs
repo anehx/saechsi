@@ -8,7 +8,7 @@
     onSelect    = (route-action 'setSemester')
   }}
 
-  {{sx-input value=model.name placeholder=(t 'timetable.subjects.enterName')}}
+  {{sx-input valid=(v-get model 'name' 'isValid') value=model.name placeholder=(t 'timetable.subjects.enterName')}}
 
-  {{#sx-button type='submit'}}{{t 'save'}}{{/sx-button}}
+  {{#sx-button enabled=(v-get model 'isValid') type='submit'}}{{t 'save'}}{{/sx-button}}
 </form>

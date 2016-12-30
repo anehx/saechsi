@@ -8,6 +8,11 @@
   font-family: inherit;
   font-size: inherit;
 
+  &.invalid {
+    border-color: $color-error;
+    color: $color-error;
+  }
+
   &:focus {
     outline: none;
   }

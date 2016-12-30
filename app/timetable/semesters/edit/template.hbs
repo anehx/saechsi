@@ -1,7 +1,7 @@
 <form {{action 'save' on='submit'}}>
-  {{sx-input placeholder=(t 'timetable.semesters.name') value=model.name}}
-  {{sx-datepicker placeholder=(t 'timetable.semesters.from') selected=model.from on-select=(action (mut model.from))}}
-  {{sx-datepicker placeholder=(t 'timetable.semesters.to')   selected=model.to   on-select=(action (mut model.to))}}
+  {{sx-input placeholder=(t 'timetable.semesters.name') value=model.name valid=(v-get model 'name' 'isValid')}}
+  {{sx-datepicker placeholder=(t 'timetable.semesters.from') valid=(v-get model 'from' 'isValid') selected=model.from on-select=(action (mut model.from))}}
+  {{sx-datepicker placeholder=(t 'timetable.semesters.to')   valid=(v-get model 'to' 'isValid')   selected=model.to   on-select=(action (mut model.to))}}
 
-  {{#sx-button type='submit'}}{{t 'save'}}{{/sx-button}}
+  {{#sx-button type='submit' enabled=(v-get model 'isValid')}}{{t 'save'}}{{/sx-button}}
 </form>

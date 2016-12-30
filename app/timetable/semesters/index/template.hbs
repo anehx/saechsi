@@ -1,31 +1,16 @@
 <div class="box-list">
-  {{#each activeSemesters as |semester|}}
-  <div class="box-list-item clickable" {{action (transition-to 'timetable.semesters.edit' semester.id)}}>
-      <div class="box-list-item-title">{{semester.name}}</div>
-      <div class="box-list-item-body">
-        {{sx-grade semester.average}}
-        <em>{{moment-format semester.from 'DD.MM.YYYY'}} - {{moment-format semester.to 'DD.MM.YYYY'}}</em>
+  {{#each model as |semester|}}
+    {{#unless semester.isDeleted}}
+      <div class="box-list-item clickable" {{action (transition-to 'timetable.semesters.edit' semester.id)}}>
+        <div class="box-list-item-title">{{semester.name}}</div>
+        <div class="box-list-item-body">
+          {{sx-grade (await semester.average)}}
+          <em>{{moment-format semester.from 'DD.MM.YYYY'}} - {{moment-format semester.to 'DD.MM.YYYY'}}</em>
+        </div>
       </div>
-    </div>
+    {{/unless}}
   {{/each}}
   <div class="box-list-item box-list-item--new clickable" {{action (transition-to 'timetable.semesters.new')}}>
     {{sx-icon 'ios-plus-empty'}}
   </div>
 </div>
-
-{{#if showInactive}}
-  <div class="box-list">
-    {{#each inactiveSemesters as |semester|}}
-    <div class="box-list-item clickable" {{action (transition-to 'timetable.semesters.edit' semester.id)}}>
-        <div class="box-list-item-title">{{semester.name}}</div>
-        <div class="box-list-item-body">
-          {{sx-grade semester.average}}
-          <em>{{moment-format semester.from 'DD.MM.YYYY'}} - {{moment-format semester.to 'DD.MM.YYYY'}}</em>
-        </div>
-      </div>
-    {{/each}}
-    <div class="box-list-item box-list-item--new clickable" {{action (transition-to 'timetable.semesters.new')}}>
-      {{sx-icon 'ios-plus-empty'}}
-    </div>
-  </div>
-{{/if}}

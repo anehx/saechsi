@@ -39,11 +39,15 @@ export default {
     title: 'Performance',
 
     grades: {
-      title: 'Grades'
+      title: 'Grades',
+      edit: 'Edit grade',
+      new: 'New grade'
     },
 
     goals: {
-      title: 'Goals'
+      title: 'Goals',
+      edit: 'Edit goal',
+      new: 'New goal'
     }
   },
 

@@ -1,6 +1,8 @@
-import Model    from 'ember-data/model'
-import attr     from 'ember-data/attr'
-import computed from 'ember-computed-decorators'
+import Model               from 'ember-data/model'
+import attr                from 'ember-data/attr'
+import computed            from 'ember-computed-decorators'
+import roundDecimal        from 'saechsi/utils/round'
+import ValidatedModelMixin from 'saechsi/mixins/validated-model'
 
 import {
   belongsTo,
@@ -17,21 +19,17 @@ const Validations = buildValidations({
   semester: validator('presence', true)
 })
 
-export default Model.extend(Validations, {
+export default Model.extend(ValidatedModelMixin, Validations, {
   name:     attr('string'),
   semester: belongsTo('semester'),
-  grades:   hasMany('grade'),
-  goals:    hasMany('goal'),
+  goals:    hasMany('goal', { inverse: null }),
+  grades:   hasMany('grade', { inverse: null }),
 
-  @computed('grades.[]')
+  @computed('grades.@each.score')
   average(grades) {
-    let len = grades.get('length')
-    let sum = grades.reduce((avg, grade) => {
-      avg += grade.get('score') // eslint-disable-line no-param-reassign
+    let scores = grades.mapBy('score').filter(parseFloat)
+    let sum    = scores.reduce((s, score) => s + score, 0)
 
-      return avg
-    }, 0)
-
-    return len ? sum / len : 0
+    return roundDecimal(sum / scores.length) || 0
   }
 })

@@ -7,15 +7,16 @@ export default Route.extend(ToolbarRouteMixin, {
   },
 
   beforeModel() {
-    return this.store.findAll('semester')
+    return Promise.all([
+      this.store.findAll('semester'),
+      this.store.findAll('subject')
+    ])
   },
 
   async model({ semester }) {
     if (!semester) return []
 
-    let subjects = await this.store.findAll('subject')
-
-    return subjects.filter(s => s.get('semester.id') === semester)
+    return this.store.query('subject', { orderBy: 'semester', equalTo: semester })
   },
 
   setupController(controller) {

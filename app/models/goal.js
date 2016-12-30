@@ -1,6 +1,7 @@
-import Model         from 'ember-data/model'
-import attr          from 'ember-data/attr'
-import { belongsTo } from 'ember-data/relationships'
+import Model               from 'ember-data/model'
+import attr                from 'ember-data/attr'
+import { belongsTo }       from 'ember-data/relationships'
+import ValidatedModelMixin from 'saechsi/mixins/validated-model'
 
 import {
   validator,
@@ -14,8 +15,7 @@ const Validations = buildValidations({
   ]
 })
 
-export default Model.extend(Validations, {
+export default Model.extend(ValidatedModelMixin, Validations, {
   score:    attr('number'),
-  subject:  belongsTo('subject'),
-  semester: belongsTo('semester')
+  subject:  belongsTo('subject')
 })

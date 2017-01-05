@@ -1,5 +1,10 @@
 <?xml version='1.0' encoding='utf-8'?>
-<widget id="ch.jonasmetzener.saechsi" version="1.0.7" xmlns="http://www.w3.org/ns/widgets" xmlns:cdv="http://cordova.apache.org/ns/1.0">
+<widget
+  id="ch.jonasmetzener.saechsi"
+  version="1.1.0"
+  android-versionCode="100072"
+  xmlns="http://www.w3.org/ns/widgets"
+  xmlns:cdv="http://cordova.apache.org/ns/1.0">
     <name>Sächsi</name>
     <description>
     </description>

@@ -1,21 +1,8 @@
-.ember-basic-dropdown-content {
-  width: 100%;
-  background-color: $color-secondary;
-  padding: 0 0 1rem;
+.ember-modal-overlay {
+  z-index: 10001;
+  background-color: rgba(0,0,0,0.5);
+}
 
-  .ember-power-calendar-day--current-month {
-    background-color: $color-bg !important;
-
-    &:hover {
-      background-color: lighten($color-bg, 5%) !important;
-    }
-  }
-
-  .ember-power-calendar-day--other-month {
-    background-color: $color-secondary !important;
-  }
-
-  .ember-power-calendar-day--selected {
-    background-color: $color-primary !important;
-  }
+.ember-modal-dialog {
+  background-color: $color-bg;
 }

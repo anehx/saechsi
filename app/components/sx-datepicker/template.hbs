@@ -1,14 +1,14 @@
-{{#basic-dropdown as |dropdown|}}
-  {{sx-input
-    placeholder = placeholder
-    elementId   = (concat 'ember-basic-dropdown-trigger-' dropdown.uniqueId)
-    readonly    = true
-    value       = (if selected (moment-format selected 'DD.MM.YYYY'))
-    click       = (action dropdown.actions.toggle)
-    valid       = valid
-  }}
+{{sx-input
+  placeholder = placeholder
+  readonly    = true
+  value       = (if selected (moment-format selected 'DD.MM.YYYY'))
+  click       = (action (mut showModal) true)
+  valid       = valid
+}}
 
-  {{#dropdown.content}}
-    {{sx-calendar selected=selected on-select=(action (pipe (action 'select') (action dropdown.actions.toggle)))}}
-  {{/dropdown.content}}
-{{/basic-dropdown}}
+
+{{#if showModal}}
+  {{#modal-dialog close=(action (mut showModal) false)}}
+    {{sx-calendar selected=selected on-select=(action (pipe (action 'select') (action (mut showModal) false)))}}
+  {{/modal-dialog}}
+{{/if}}

@@ -50,6 +50,7 @@
     "ember-composable-helpers": "1.1.2",
     "ember-computed-decorators": "0.2.2",
     "ember-cordova": "0.3.13",
+    "ember-cordova-splash": "0.1.0",
     "ember-cp-validations": "3.1.4",
     "ember-data": "^2.10.0",
     "ember-export-application-global": "^1.0.5",

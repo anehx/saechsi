@@ -11,7 +11,7 @@ import {
 const Validations = buildValidations({
   score: [
     validator('presence', true),
-    validator('number', { gt: 1, lte: 6 })
+    validator('number', { gte: 1, lte: 6 })
   ],
   subject: validator('presence', true),
   date: validator('date', { precision: 'day' })

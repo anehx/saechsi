@@ -12,7 +12,7 @@ import {
 
 const Validations = buildValidations({
   score: [
-    validator('number', { gt: 1, lte: 6 }),
+    validator('number', { gte: 1, lte: 6 }),
     validator('presence', true)
   ]
 })
@@ -32,9 +32,11 @@ export default Model.extend(ValidatedModelMixin, Validations, {
     return semester || subject
   },
 
-  @computed('score', 'subject.average', 'subject.grades.length')
-  needed(score, avg) {
-    return roundDecimal(avg && score * 2 - avg)
+  @computed('score', 'subject.grades.@each.score', 'subject.grades.length')
+  needed(score, grades, count) {
+    let x = score * count + score - grades.reduce((sum, grade) => sum + grade.get('score'), 0)
+
+    return roundDecimal(x)
   },
 
   async save() {

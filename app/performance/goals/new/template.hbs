@@ -33,6 +33,6 @@
   {{/if}}
   {{#if step3}}
     {{sx-grade-input value=model.score}}
-    {{#sx-button type='submit'}}{{t 'save'}}{{/sx-button}}
+    {{#sx-button enabled=(v-get model 'isValid') type='submit'}}{{t 'save'}}{{/sx-button}}
   {{/if}}
 </form>

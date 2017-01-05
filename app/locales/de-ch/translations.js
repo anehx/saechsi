@@ -4,8 +4,8 @@ export default {
   delete: 'Lösche',
 
   sign: {
-    in: 'Ihlogge',
-    up: 'Registrie',
+    in: 'Ilogge',
+    up: 'Registriere',
     out: 'Uslogge'
   },
 
@@ -65,7 +65,7 @@ export default {
   },
 
   settings: {
-    title: 'Ihstellige'
+    title: 'Istellige'
   },
 
   comments: {

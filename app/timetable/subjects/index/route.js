@@ -23,5 +23,11 @@ export default Route.extend(ToolbarRouteMixin, {
     this._super(...arguments)
 
     controller.set('semesters', this.store.peekAll('semester'))
+  },
+
+  resetController(controller, isExiting) {
+    if (isExiting) {
+      controller.set('semester', null)
+    }
   }
 })

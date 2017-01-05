@@ -26,6 +26,10 @@ module.exports = function(environment) {
       defaultLocale: 'de-ch'
     },
 
+    moment: {
+      includeLocales: [ 'de', 'en' ]
+    },
+
     webFontConfig: {
       google: {
         families: [ 'Quicksand' ]
